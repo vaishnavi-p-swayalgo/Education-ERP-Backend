@@ -1,0 +1,13 @@
+_HiStOrY_V2_
+show\040columns\040from\040`tabCompany`\040like\040'%school%';
+show\040columns\040from\040`tabCompany`\040like\040'%principal%';
+show\040columns\040from\040`tabCompany`\040like\040'%udise%';
+show\040columns\040from\040`tabCompany`\040like\040'%school%';
+show\040columns\040from\040`tabCompany`\040like\040'%principal%';
+show\040columns\040from\040`tabCompany`\040like\040'%udise%';
+show\040columns\040from\040`tabCompany`\040like\040'%school%';
+show\040columns\040from\040`tabCompany`\040like\040'%principal%';
+show\040columns\040from\040`tabCompany`\040like\040'%udise%';
+show\040columns\040from\040`tabCompany`\040like\040'%affiliation%';
+exit;
+DESCRIBE\040`tabCompany`;

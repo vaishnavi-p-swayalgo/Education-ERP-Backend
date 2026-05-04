@@ -1,0 +1,95 @@
+2026-04-17 16:50:51,348 INFO ipython === bench console session ===
+2026-04-17 16:50:51,349 INFO ipython user = frappe.get_doc("User", "vaishnavistd1@gmail.com")
+user.append("roles", {"role": "Student"})
+user.save()
+frappe.db.commit()
+print("Done:", [r.role for r in user.roles])
+2026-04-17 16:50:51,349 INFO ipython === session end ===
+2026-04-21 10:08:59,003 INFO ipython === bench console session ===
+2026-04-21 10:08:59,011 INFO ipython import frappe
+meta = frappe.get_meta("Fee Schedule")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:08:59,011 INFO ipython v
+2026-04-21 10:08:59,011 INFO ipython import frappe
+meta = frappe.get_meta("Fee Schedule Student Group")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:08:59,011 INFO ipython meta2 = frappe.get_meta("Fee Schedule Component")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 10:08:59,011 INFO ipython === session end ===
+2026-04-21 10:14:00,667 INFO ipython === bench console session ===
+2026-04-21 10:14:00,672 INFO ipython import frappe
+meta = frappe.get_meta("Fees")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:14:00,672 INFO ipython meta2 = frappe.get_meta("Fee Component")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 10:14:00,672 INFO ipython meta3 = frappe.get_meta("Payment Info")
+print([f.fieldname for f in meta3.fields])
+2026-04-21 10:14:00,672 INFO ipython clear
+2026-04-21 10:14:00,672 INFO ipython === session end ===
+2026-04-21 11:31:31,719 INFO ipython === bench console session ===
+2026-04-21 11:31:31,731 INFO ipython import frappe
+meta = frappe.get_meta("Fees")
+print([(f.fieldname, f.reqd) for f in meta.fields if f.reqd])
+2026-04-21 11:31:31,731 INFO ipython meta2 = frappe.get_meta("Fee Schedule")
+print([(f.fieldname, f.reqd) for f in meta2.fields if f.reqd])
+2026-04-21 11:31:31,731 INFO ipython clear
+2026-04-21 11:31:31,732 INFO ipython import frappe
+meta = frappe.get_meta("Course Schedule")
+print([f.fieldname for f in meta.fields])
+2026-04-21 11:31:31,732 INFO ipython === session end ===
+2026-04-21 11:39:48,729 INFO ipython === bench console session ===
+2026-04-21 11:39:50,486 INFO ipython import frappe
+meta = frappe.get_meta("Room")
+print([f.fieldname for f in meta.fields])
+2026-04-21 11:39:50,486 INFO ipython === session end ===
+2026-04-21 11:49:27,468 INFO ipython === bench console session ===
+2026-04-21 11:49:27,470 INFO ipython import frappe
+frappe.db.sql("SELECT error FROM `tabError Log` ORDER BY creation DESC LIMIT 3", as_dict=True)
+2026-04-21 11:49:27,470 INFO ipython === session end ===
+2026-04-21 11:53:51,947 INFO ipython === bench console session ===
+2026-04-21 11:53:51,949 INFO ipython import frappe
+# Check a student group to see what course field looks like
+frappe.db.get_value("Student Group", "BCA Batch A 101", ["group_based_on", "course"], as_dict=True)
+2026-04-21 11:53:51,949 INFO ipython # Check what the Course doctype names look like
+frappe.db.get_list("Course", fields=["name", "course_name"], limit=5)
+2026-04-21 11:53:51,949 INFO ipython === session end ===
+2026-04-21 11:57:15,344 INFO ipython === bench console session ===
+2026-04-21 11:57:15,346 INFO ipython import frappe
+meta = frappe.get_meta("Course Schedule")
+for f in meta.fields:
+    if f.fieldname == 'course':
+        print(f.reqd, f.fieldname, f.fieldtype, f.options)
+        
+2026-04-21 11:57:15,346 INFO ipython exir
+2026-04-21 11:57:15,346 INFO ipython === session end ===
+2026-04-21 12:00:18,958 INFO ipython === bench console session ===
+2026-04-21 12:00:18,959 INFO ipython import frappe
+meta = frappe.get_meta("Student Attendance")
+print([f.fieldname for f in meta.fields])
+2026-04-21 12:00:18,959 INFO ipython === session end ===
+2026-04-21 12:06:30,320 INFO ipython === bench console session ===
+2026-04-21 12:06:30,324 INFO ipython import frappe
+frappe.db.sql("SELECT error FROM `tabError Log` ORDER BY creation DESC LIMIT 1", as_dict=True)[0]['error'].split('\n')[-20:]
+2026-04-21 12:06:30,324 INFO ipython clear
+2026-04-21 12:06:30,325 INFO ipython import frappe
+meta = frappe.get_meta("Holiday List")
+print([f.fieldname for f in meta.fields])
+2026-04-21 12:06:30,325 INFO ipython meta2 = frappe.get_meta("Holiday")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 12:06:30,325 INFO ipython === session end ===
+2026-04-21 13:18:02,542 INFO ipython === bench console session ===
+2026-04-21 13:18:02,565 INFO ipython // Simple direct test — paste and press Enter, check Network tab
+fetch('http://localhost:8006/api/resource/Student%20Attendance', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'token c22af0809fb758f:7c971ea4c00e381',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    student: 'EDU-STU-2025-00001',  // replace with any real student name from your DB
+    date: '2025-04-21',
+    status: 'Present',
+    student_group: 'your-group-name', // replace with real group
+  })
+}).then(r => r.json()).then(console.log).catch(console.error);
+2026-04-21 13:18:02,566 INFO ipython === session end ===

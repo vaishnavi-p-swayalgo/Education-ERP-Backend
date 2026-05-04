@@ -1,0 +1,375 @@
+2026-04-24 13:12:07,449 ERROR scheduler Exception in Enqueue Events for Site edu.local
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x77acf8728ea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 250, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 225, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 124, in get_doc_str
+    if controller := get_controller(doctype):
+                     ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-24 13:16:06,995 ERROR scheduler Exception in Enqueue Events for Site edu.local
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x77acf8728ea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 117, in enqueue_events_for_site
+    if is_scheduler_inactive():
+       ~~~~~~~~~~~~~~~~~~~~~^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 161, in is_scheduler_inactive
+    if is_scheduler_disabled(verbose=verbose):
+       ~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/scheduler.py", line 173, in is_scheduler_disabled
+    scheduler_disabled = not frappe.get_system_settings("enable_scheduler")
+                             ~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 250, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+           ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 529, in get_value
+    val = generator()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+                                                 ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 225, in wrapper
+    return dispatch(args[0])(*args, **kw)
+           ~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 124, in get_doc_str
+    if controller := get_controller(doctype):
+                     ~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.ProgrammingError: (1146, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist")
+2026-04-27 06:44:00,552 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-27 06:48:00,577 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-27 06:48:00,584 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-27 06:48:00,586 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for edu.local
+2026-04-27 06:48:00,589 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-27 06:48:00,593 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-27 06:48:00,594 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for edu.local
+2026-04-27 06:48:00,595 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-27 06:48:00,597 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-27 06:52:00,622 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-27 06:52:00,634 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-27 06:52:00,639 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-27 06:52:00,643 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 05:32:00,099 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.run_parallel_reposting because it was found in queue for edu.local
+2026-04-30 05:32:00,129 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for edu.local
+2026-04-30 05:32:00,131 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for edu.local
+2026-04-30 05:32:00,133 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 05:32:00,135 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for edu.local
+2026-04-30 05:32:00,136 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for edu.local
+2026-04-30 05:32:00,138 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for edu.local
+2026-04-30 05:32:00,140 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-30 05:32:00,142 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for edu.local
+2026-04-30 05:32:00,143 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for edu.local
+2026-04-30 05:32:00,145 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for edu.local
+2026-04-30 05:32:00,146 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.hourly_reminder because it was found in queue for edu.local
+2026-04-30 05:32:00,148 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 05:32:00,150 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for edu.local
+2026-04-30 05:32:00,151 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for edu.local
+2026-04-30 05:32:00,152 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for edu.local
+2026-04-30 05:32:00,154 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-30 05:32:00,155 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for edu.local
+2026-04-30 05:32:00,157 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-30 05:32:00,158 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for edu.local
+2026-04-30 05:32:00,160 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for edu.local
+2026-04-30 05:32:00,161 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-30 05:32:00,163 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for edu.local
+2026-04-30 05:32:00,165 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 05:32:00,168 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for edu.local
+2026-04-30 05:32:00,169 ERROR scheduler Skipped queueing frappe.desk.utils.delete_old_exported_report_files because it was found in queue for edu.local
+2026-04-30 05:32:00,171 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 05:32:00,172 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for edu.local
+2026-04-30 05:32:00,173 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for edu.local
+2026-04-30 05:32:00,176 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 05:48:00,387 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-30 06:04:00,361 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 06:04:00,379 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 06:04:00,382 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 06:04:00,385 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 06:08:00,717 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 06:08:00,724 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 06:08:00,731 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 06:12:00,885 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 06:12:01,002 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 06:32:00,996 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for edu.local
+2026-04-30 06:32:01,011 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for edu.local
+2026-04-30 06:32:01,012 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.hourly_reminder because it was found in queue for edu.local
+2026-04-30 06:32:01,014 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 06:32:01,015 ERROR scheduler Skipped queueing frappe.search.sqlite_search.build_index_if_not_exists because it was found in queue for edu.local
+2026-04-30 06:32:01,017 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-30 06:32:01,018 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for edu.local
+2026-04-30 06:32:01,019 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for edu.local
+2026-04-30 06:32:01,020 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 06:32:01,022 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for edu.local
+2026-04-30 06:32:01,023 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for edu.local
+2026-04-30 06:32:01,024 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for edu.local
+2026-04-30 06:32:01,025 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for edu.local
+2026-04-30 06:32:01,026 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for edu.local
+2026-04-30 06:32:01,027 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for edu.local
+2026-04-30 06:32:01,029 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-30 06:32:01,031 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.run_parallel_reposting because it was found in queue for edu.local
+2026-04-30 06:32:01,032 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for edu.local
+2026-04-30 06:32:01,034 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-30 06:32:01,035 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for edu.local
+2026-04-30 06:32:01,036 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for edu.local
+2026-04-30 06:32:01,037 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for edu.local
+2026-04-30 06:32:01,038 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for edu.local
+2026-04-30 06:32:01,039 ERROR scheduler Skipped queueing frappe.desk.utils.delete_old_exported_report_files because it was found in queue for edu.local
+2026-04-30 06:32:01,040 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 06:32:01,041 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for edu.local
+2026-04-30 06:32:01,044 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 06:32:01,045 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-30 06:32:01,046 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for edu.local
+2026-04-30 06:36:00,681 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 06:36:00,683 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 06:36:00,686 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 08:16:00,423 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for edu.local
+2026-04-30 08:16:00,455 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for edu.local
+2026-04-30 08:16:00,461 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-30 08:16:00,465 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-30 08:16:00,469 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 08:16:00,475 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-30 08:32:00,992 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.pull because it was found in queue for edu.local
+2026-04-30 08:32:01,018 ERROR scheduler Skipped queueing frappe.desk.page.backups.backups.delete_downloadable_backups because it was found in queue for edu.local
+2026-04-30 08:32:01,020 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-30 08:32:01,025 ERROR scheduler Skipped queueing frappe.oauth.delete_oauth2_data because it was found in queue for edu.local
+2026-04-30 08:32:01,028 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 08:32:01,030 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 08:32:01,035 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.hourly_reminder because it was found in queue for edu.local
+2026-04-30 08:32:01,038 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-30 08:32:01,040 ERROR scheduler Skipped queueing frappe.email.doctype.email_account.email_account.notify_unreplied because it was found in queue for edu.local
+2026-04-30 08:32:01,043 ERROR scheduler Skipped queueing frappe.model.utils.link_count.update_link_count because it was found in queue for edu.local
+2026-04-30 08:32:01,046 ERROR scheduler Skipped queueing erpnext.utilities.bulk_transaction.retry because it was found in queue for edu.local
+2026-04-30 08:32:01,050 ERROR scheduler Skipped queueing frappe.website.doctype.personal_data_deletion_request.personal_data_deletion_request.process_data_deletion_request because it was found in queue for edu.local
+2026-04-30 08:32:01,053 ERROR scheduler Skipped queueing frappe.desk.form.document_follow.send_hourly_updates because it was found in queue for edu.local
+2026-04-30 08:32:01,058 ERROR scheduler Skipped queueing frappe.twofactor.delete_all_barcodes_for_users because it was found in queue for edu.local
+2026-04-30 08:32:01,061 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.run_parallel_reposting because it was found in queue for edu.local
+2026-04-30 08:32:01,065 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.collect_project_status because it was found in queue for edu.local
+2026-04-30 08:32:01,068 ERROR scheduler Skipped queueing erpnext.stock.doctype.repost_item_valuation.repost_item_valuation.repost_entries because it was found in queue for edu.local
+2026-04-30 08:32:01,070 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 08:32:01,073 ERROR scheduler Skipped queueing erpnext.erpnext_integrations.doctype.plaid_settings.plaid_settings.automatic_synchronization because it was found in queue for edu.local
+2026-04-30 08:32:01,076 ERROR scheduler Skipped queueing frappe.desk.utils.delete_old_exported_report_files because it was found in queue for edu.local
+2026-04-30 08:32:01,079 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-30 08:32:01,081 ERROR scheduler Skipped queueing erpnext.utilities.doctype.video.video.update_youtube_data because it was found in queue for edu.local
+2026-04-30 08:32:01,084 ERROR scheduler Skipped queueing frappe.model.utils.user_settings.sync_user_settings because it was found in queue for edu.local
+2026-04-30 08:32:01,086 ERROR scheduler Skipped queueing erpnext.projects.doctype.project.project.project_status_update_reminder because it was found in queue for edu.local
+2026-04-30 08:32:01,090 ERROR scheduler Skipped queueing frappe.website.doctype.web_page.web_page.check_publish_status because it was found in queue for edu.local
+2026-04-30 08:32:01,093 ERROR scheduler Skipped queueing frappe.deferred_insert.save_to_db because it was found in queue for edu.local
+2026-04-30 08:32:01,098 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 08:32:01,100 ERROR scheduler Skipped queueing frappe.core.doctype.prepared_report.prepared_report.expire_stalled_report because it was found in queue for edu.local
+2026-04-30 09:24:00,346 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 09:24:00,358 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 09:24:00,360 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 09:24:00,362 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 09:44:00,037 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 09:44:00,058 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 09:44:00,061 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:07:59,692 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 10:07:59,724 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 10:07:59,725 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:07:59,730 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 10:07:59,733 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 10:08:00,795 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 10:08:00,805 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 10:08:00,809 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:12:00,118 ERROR scheduler Skipped queueing frappe.email.doctype.notification.notification.trigger_offset_alerts because it was found in queue for edu.local
+2026-04-30 10:12:00,130 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 10:12:00,136 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 10:15:59,731 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-30 10:15:59,737 ERROR scheduler Skipped queueing frappe.utils.global_search.sync_global_search because it was found in queue for edu.local
+2026-04-30 10:24:00,740 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 10:24:00,754 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:40:00,414 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 10:40:00,429 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:40:00,438 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 10:48:00,530 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 10:48:00,533 ERROR scheduler Skipped queueing frappe.utils.telemetry.pulse.client.send_queued_events because it was found in queue for edu.local
+2026-04-30 10:48:00,536 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 10:48:00,537 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 10:48:00,539 ERROR scheduler Skipped queueing frappe.automation.doctype.reminder.reminder.send_reminders because it was found in queue for edu.local
+2026-04-30 10:48:00,541 ERROR scheduler Skipped queueing erpnext.manufacturing.doctype.bom_update_log.bom_update_log.resume_bom_cost_update_jobs because it was found in queue for edu.local
+2026-04-30 11:20:00,963 ERROR scheduler Skipped queueing frappe.email.queue.flush because it was found in queue for edu.local
+2026-04-30 11:20:00,994 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 11:20:00,997 ERROR scheduler Skipped queueing frappe.monitor.flush because it was found in queue for edu.local
+2026-04-30 11:20:00,999 ERROR scheduler Skipped queueing frappe.integrations.doctype.google_calendar.google_calendar.sync because it was found in queue for edu.local
+2026-04-30 13:52:10,098 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 13:56:10,657 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local
+2026-04-30 14:00:09,894 ERROR scheduler Skipped queueing frappe.email.queue.retry_sending_emails because it was found in queue for edu.local

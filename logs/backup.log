@@ -1,0 +1,1028 @@
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260309_233006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-09 23:30:14.681642
+Config  : ./edu.local/private/backups/20260309_233006-edu_local-site_config_backup.json 94.0B
+Database: ./edu.local/private/backups/20260309_233006-edu_local-database.sql.gz         861.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260310_113004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-10 11:30:11.467901
+Config  : ./edu.local/private/backups/20260310_113004-edu_local-site_config_backup.json 94.0B
+Database: ./edu.local/private/backups/20260310_113004-edu_local-database.sql.gz         866.8KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260310_173017-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-10 17:30:36.324363
+Config  : ./edu.local/private/backups/20260310_173017-edu_local-site_config_backup.json 94.0B
+Database: ./edu.local/private/backups/20260310_173017-edu_local-database.sql.gz         869.0KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260311_113008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-11 11:30:25.067736
+Config  : ./edu.local/private/backups/20260311_113008-edu_local-site_config_backup.json 94.0B
+Database: ./edu.local/private/backups/20260311_113008-edu_local-database.sql.gz         869.0KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260311_173259-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-11 17:37:34.215261
+Config  : ./edu.local/private/backups/20260311_173259-edu_local-site_config_backup.json 94.0B
+Database: ./edu.local/private/backups/20260311_173259-edu_local-database.sql.gz         875.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260312_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-12 11:30:15.201923
+Config  : ./edu.local/private/backups/20260312_113006-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260312_113006-edu_local-database.sql.gz         888.5KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260312_173013-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-12 17:30:29.952755
+Config  : ./edu.local/private/backups/20260312_173013-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260312_173013-edu_local-database.sql.gz         898.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260313_113014-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-13 11:30:25.140456
+Config  : ./edu.local/private/backups/20260313_113014-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260313_113014-edu_local-database.sql.gz         904.5KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260313_173224-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-13 17:32:39.602106
+Config  : ./edu.local/private/backups/20260313_173224-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260313_173224-edu_local-database.sql.gz         914.2KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260314_233006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-14 23:30:14.294986
+Config  : ./edu.local/private/backups/20260314_233006-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260314_233006-edu_local-database.sql.gz         917.3KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260316_113007-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-16 11:30:15.809445
+Config  : ./edu.local/private/backups/20260316_113007-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260316_113007-edu_local-database.sql.gz         921.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260316_173009-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-16 17:30:17.490979
+Config  : ./edu.local/private/backups/20260316_173009-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260316_173009-edu_local-database.sql.gz         931.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260316_233007-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-16 23:30:18.768023
+Config  : ./edu.local/private/backups/20260316_233007-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260316_233007-edu_local-database.sql.gz         938.2KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260317_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-17 11:30:14.017636
+Config  : ./edu.local/private/backups/20260317_113006-edu_local-site_config_backup.json 157.0B
+Database: ./edu.local/private/backups/20260317_113006-edu_local-database.sql.gz         942.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260317_173005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-17 17:30:11.195939
+Config  : ./edu.local/private/backups/20260317_173005-edu_local-site_config_backup.json 196.0B
+Database: ./edu.local/private/backups/20260317_173005-edu_local-database.sql.gz         941.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260318_113008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-18 11:30:21.325751
+Config  : ./edu.local/private/backups/20260318_113008-edu_local-site_config_backup.json 235.0B
+Database: ./edu.local/private/backups/20260318_113008-edu_local-database.sql.gz         951.5KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260318_173008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-18 17:30:19.579862
+Config  : ./edu.local/private/backups/20260318_173008-edu_local-site_config_backup.json 235.0B
+Database: ./edu.local/private/backups/20260318_173008-edu_local-database.sql.gz         954.6KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260319_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-19 11:30:12.611929
+Config  : ./edu.local/private/backups/20260319_113005-edu_local-site_config_backup.json 235.0B
+Database: ./edu.local/private/backups/20260319_113005-edu_local-database.sql.gz         954.6KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260319_173006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-19 17:30:15.057881
+Config  : ./edu.local/private/backups/20260319_173006-edu_local-site_config_backup.json 235.0B
+Database: ./edu.local/private/backups/20260319_173006-edu_local-database.sql.gz         954.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260320_173006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-20 17:30:15.190474
+Config  : ./edu.local/private/backups/20260320_173006-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260320_173006-edu_local-database.sql.gz         955.3KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260322_113003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-22 11:30:10.583484
+Config  : ./edu.local/private/backups/20260322_113003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260322_113003-edu_local-database.sql.gz         958.0KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260323_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-23 11:30:12.375853
+Config  : ./edu.local/private/backups/20260323_113005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260323_113005-edu_local-database.sql.gz         958.0KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260323_173008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-23 17:30:16.206173
+Config  : ./edu.local/private/backups/20260323_173008-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260323_173008-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260325_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-25 11:30:12.422985
+Config  : ./edu.local/private/backups/20260325_113005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260325_113005-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260325_173006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-25 17:30:15.438399
+Config  : ./edu.local/private/backups/20260325_173006-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260325_173006-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260326_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-26 11:30:12.151638
+Config  : ./edu.local/private/backups/20260326_113006-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260326_113006-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260326_173006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-26 17:30:17.470558
+Config  : ./edu.local/private/backups/20260326_173006-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260326_173006-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260326_233005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-26 23:30:12.750562
+Config  : ./edu.local/private/backups/20260326_233005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260326_233005-edu_local-database.sql.gz         966.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260327_173009-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-27 17:30:17.933934
+Config  : ./edu.local/private/backups/20260327_173009-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260327_173009-edu_local-database.sql.gz         966.5KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260331_113002-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-31 11:30:05.666068
+Config  : ./edu.local/private/backups/20260331_113002-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260331_113002-edu_local-database.sql.gz         967.8KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260331_173005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-03-31 17:30:12.417941
+Config  : ./edu.local/private/backups/20260331_173005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260331_173005-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260401_113004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-01 11:30:07.968985
+Config  : ./edu.local/private/backups/20260401_113004-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260401_113004-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260401_173002-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-01 17:30:05.260444
+Config  : ./edu.local/private/backups/20260401_173002-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260401_173002-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260402_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-02 11:30:15.206509
+Config  : ./edu.local/private/backups/20260402_113005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260402_113005-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260402_173003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-02 17:30:10.647295
+Config  : ./edu.local/private/backups/20260402_173003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260402_173003-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260403_113001-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-03 11:30:05.730418
+Config  : ./edu.local/private/backups/20260403_113001-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260403_113001-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260403_173003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-03 17:30:06.910329
+Config  : ./edu.local/private/backups/20260403_173003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260403_173003-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260406_113002-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-06 11:30:09.019322
+Config  : ./edu.local/private/backups/20260406_113002-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260406_113002-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260407_113003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-07 11:30:06.710013
+Config  : ./edu.local/private/backups/20260407_113003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260407_113003-edu_local-database.sql.gz         969.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260408_173003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-08 17:30:08.053453
+Config  : ./edu.local/private/backups/20260408_173003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260408_173003-edu_local-database.sql.gz         972.0KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260413_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-13 11:30:12.272251
+Config  : ./edu.local/private/backups/20260413_113005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260413_113005-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260413_173003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-13 17:30:07.842084
+Config  : ./edu.local/private/backups/20260413_173003-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260413_173003-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260414_173004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-14 17:30:12.460711
+Config  : ./edu.local/private/backups/20260414_173004-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260414_173004-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260415_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-15 11:30:15.660287
+Config  : ./edu.local/private/backups/20260415_113006-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260415_113006-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260415_173005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-15 17:30:09.978690
+Config  : ./edu.local/private/backups/20260415_173005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260415_173005-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_5318e3b9c751fced --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _5318e3b9c751fced | /usr/bin/gzip >> ./edu.local/private/backups/20260416_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-16 11:30:09.800818
+Config  : ./edu.local/private/backups/20260416_113005-edu_local-site_config_backup.json 324.0B
+Database: ./edu.local/private/backups/20260416_113005-edu_local-database.sql.gz         972.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260416_173004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-16 17:30:05.564305
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260416_173004-edu_local-site_config_backup.json 127.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260416_173004-edu_local-database.sql.gz 215.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260417_113004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-17 11:30:08.498486
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260417_113004-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260417_113004-edu_local-database.sql.gz 955.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260417_173004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-17 17:30:08.003156
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260417_173004-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260417_173004-edu_local-database.sql.gz 955.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260420_113004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-20 11:30:08.492367
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260420_113004-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260420_113004-edu_local-database.sql.gz 976.5KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260421_113008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-21 11:30:15.327331
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_113008-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_113008-edu_local-database.sql.gz 990.4KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260421_173005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-21 17:30:10.072119
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_173005-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_173005-edu_local-database.sql.gz 997.2KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260421_233009-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-21 23:30:18.073769
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_233009-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260421_233009-edu_local-database.sql.gz 1006.9KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260422_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-22 11:30:10.139009
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260422_113006-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260422_113006-edu_local-database.sql.gz 1009.6KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260422_173008-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-22 17:30:14.447210
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260422_173008-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260422_173008-edu_local-database.sql.gz 1.0MiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260423_173010-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-23 17:30:21.245708
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260423_173010-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260423_173010-edu_local-database.sql.gz 1.0MiB
+Backup for Site edu.local has been successfully completed
+Backup failed for Site edu.local. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 881, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(force=False, profile=False, sites=['edu.local'], verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x725be6bb9c70>
+      exit_code = 0
+      rollback_callback = None
+      site = 'edu.local'
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = frappe.utils.CallbackManager()
+  File "apps/frappe/frappe/utils/backups.py", line 647, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = frappe.utils.CallbackManager()
+      odb = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+  File "apps/frappe/frappe/utils/backups.py", line 188, in get_backup
+    self.set_backup_file_name()
+      self = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 210, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+      self = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+      partial = ''
+      ext = 'tar'
+  File "apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 250, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+      key = ********
+      system_settings = None
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+      self = frappe.utils.redis_wrapper.ClientCache(cache={b'_26c933a307cad213|db_tables': frappe.utils.redis_wrapper.CachedValue(['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User...27.0.0.1,port=13006)>)>)>, invalidator_id=None, local_ttl=600, lock=<unlocked _thread.RLock object owner=0 count=0 at 0x725be5e3d220>, maxsize=1024, misses=0, redis=<frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>)
+      doctype = 'System Settings'
+      name = 'System Settings'
+      key = ********
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+      self = frappe.utils.redis_wrapper.ClientCache(cache={b'_26c933a307cad213|db_tables': frappe.utils.redis_wrapper.CachedValue(['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User...27.0.0.1,port=13006)>)>)>, invalidator_id=None, local_ttl=600, lock=<unlocked _thread.RLock object owner=0 count=0 at 0x725be5e3d220>, maxsize=1024, misses=0, redis=<frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>)
+      key = ********
+      shared = False
+      generator = <function ClientCache.get_doc.<locals>.<lambda> at 0x725be5e4fe20>
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+      self = <frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>
+      key = ********
+      generator = <function ClientCache.get_doc.<locals>.<lambda> at 0x725be5e4fe20>
+      user = None
+      expires = False
+      shared = False
+      use_local_cache = True
+      original_key = ********
+      local_cache = {b'_26c933a307cad213|db_tables': ['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User', 'tabQuiz', 'tabWebhook', 'tabNote Seen By', 'tabDesktop Layout', 'tabPurchase Invoic...ender', 'tabCountry', 'tabRoute History', 'tabContract Template Fulfilment Terms', 'tabLanded Cost Item', 'tabDunning Letter Text', 'tabRequest for Quotation Supplier', 'tabIncoming Call Settings', 'tabVideo', 'tabModule Profile', 'tabWorkspace Chart'], b'_26c933a307cad213|defaults::__global': None}
+      val = None
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+      doctype = 'System Settings'
+      name = 'System Settings'
+  File "apps/frappe/frappe/model/utils/__init__.py", line 225, in wrapper
+    return dispatch(args[0])(*args, **kw)
+      args = ('System Settings', 'System Settings')
+      kw = {}
+      dispatch = <function simple_singledispatch.<locals>.dispatch at 0x725be7f1a6c0>
+      func = <function get_doc at 0x725be7f1a610>
+  File "apps/frappe/frappe/model/document.py", line 124, in get_doc_str
+    if controller := get_controller(doctype):
+      doctype = 'System Settings'
+      name = 'System Settings'
+      kwargs = {}
+  File "apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+      doctype = 'System Settings'
+      site_controllers = {}
+  File "apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+      doctype = 'System Settings'
+      Document = frappe.model.document.Document
+      NestedSet = frappe.utils.nestedset.NestedSet
+      module_name = 'Core'
+  File "apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      doctype = 'DocType'
+      filters = 'System Settings'
+      fieldname = ('module', 'custom', 'is_tree')
+      ignore = False
+      as_dict = True
+      debug = False
+      order_by = 'KEEP_DEFAULT_ORDERING'
+      cache = False
+      for_update = False
+      run = True
+      pluck = False
+      distinct = False
+      skip_locked = False
+      wait = True
+  File "apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      doctype = 'DocType'
+      filters = 'System Settings'
+      fieldname = ('module', 'custom', 'is_tree')
+      ignore = False
+      as_dict = True
+      debug = False
+      order_by = 'creation'
+      update = None
+      cache = False
+      for_update = False
+      run = True
+      pluck = False
+      distinct = False
+      limit = 1
+      skip_locked = False
+      wait = True
+      is_single_doctype = <function is_single_doctype at 0x725be7f01c70>
+      out = None
+  File "apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+      args = ()
+      kwargs = {'table': 'DocType', 'filters': 'System Settings', 'order_by': 'creation', 'for_update': False, 'skip_locked': False, 'wait': True, 'fields': ('module', 'custom', 'is_tree'), 'distinct': False, 'limit': 1}
+      Engine = frappe.database.query.Engine
+  File "apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      table = 'DocType'
+      fields = ('module', 'custom', 'is_tree')
+      filters = 'System Settings'
+      order_by = 'creation'
+      group_by = None
+      limit = 1
+      offset = None
+      distinct = False
+      for_update = False
+      update = False
+      into = False
+      delete = False
+      validate_filters = False
+      skip_locked = False
+      wait = True
+      ignore_permissions = True
+      ignore_user_permissions = False
+      user = None
+      parent_doctype = None
+      reference_doctype = None
+      or_filters = None
+      db_query_compat = False
+      qb = frappe.query_builder.builder.MariaDB
+      db_type = 'mariadb'
+      is_select = True
+  File "apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      filters = {'name': 'System Settings'}
+      collect = None
+  File "apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      filters = {'name': 'System Settings'}
+      collect = None
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+  File "apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+      doctype = None
+      collect = None
+  File "apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+      doctype = None
+      builtin_operator = <module 'operator' from '/usr/lib/python3.14/operator.py'>
+  File "apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+      filter_config = {}
+  File "apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+      hook = 'filters_config'
+      default = '_KEEP_DEFAULT_LIST'
+      app_name = None
+  File "apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+      args = ()
+      kwargs = {}
+      site = 'edu.local'
+      arguments_key = ********
+      function_cache = {}
+      func = <function _load_app_hooks at 0x725be87a45c0>
+  File "apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+      app_name = None
+      hooks = {}
+      types = <module 'types' from '/usr/lib/python3.14/types.py'>
+  File "apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+      args = ()
+      kwargs = {'_ensure_on_bench': True}
+      _cache = collections.defaultdict{<function get_installed_apps at 0x725be87a4300>: {}}
+      args_key = ********
+      func = <function get_installed_apps at 0x725be87a4300>
+  File "apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+      _ensure_on_bench = True
+  File "apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      key = ********
+      user = '__global'
+  File "apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      key = ********
+      parent = '__global'
+  File "apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+      key = ********
+      parent = '__global'
+  File "apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+      parent = '__global'
+      key = ********
+      defaults = None
+      table = "tabDefaultValue"
+  File "apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      args = ()
+      kwargs = {'as_dict': True}
+      dt = None
+      fields = []
+      child_queries = "_child_queries"
+      params = {'param1': '__global'}
+  File "apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      values = {'param1': '__global'}
+      as_dict = True
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = False
+      as_iterator = False
+      query_type = 'select'
+      trace_id = None
+  File "apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      values = {'param1': '__global'}
+  File "env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+      self = MySQLdb.cursors.Cursor(arraysize=1, description=None, description_flags=None, lastrowid=None, rowcount=None, rownumber=None)
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      args = {'param1': '__global'}
+      mogrified_query = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+  File "env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+      self = MySQLdb.cursors.Cursor(arraysize=1, description=None, description_flags=None, lastrowid=None, rowcount=None, rownumber=None)
+      q = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+      db = <_mysql.connection open to '127.0.0.1' at 0x30aaaea0>
+  File "env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+      self = <_mysql.connection open to '127.0.0.1' at 0x30aaaea0>
+      query = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Backup failed for Site edu.local. Database or site_config.json may be corrupted
+Traceback with variables (most recent call last):
+  File "apps/frappe/frappe/commands/site.py", line 881, in backup
+    odb = scheduled_backup(
+      context = CliCtxObj(force=False, profile=False, sites=['edu.local'], verbose=True)
+      with_files = False
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_backup_conf = False
+      verbose = True
+      compress = False
+      include = ''
+      exclude = ''
+      old_backup_metadata = False
+      scheduled_backup = <function scheduled_backup at 0x750c58f8dc70>
+      exit_code = 0
+      rollback_callback = None
+      site = 'edu.local'
+  File "apps/frappe/frappe/utils/backups.py", line 589, in scheduled_backup
+    return new_backup(
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = frappe.utils.CallbackManager()
+  File "apps/frappe/frappe/utils/backups.py", line 647, in new_backup
+    odb.get_backup(older_than, ignore_files, force=force)
+      older_than = 6
+      ignore_files = True
+      backup_path = None
+      backup_path_db = None
+      backup_path_files = None
+      backup_path_private_files = None
+      backup_path_conf = None
+      ignore_conf = False
+      include_doctypes = ''
+      exclude_doctypes = ''
+      compress = False
+      force = True
+      verbose = True
+      old_backup_metadata = False
+      rollback_callback = frappe.utils.CallbackManager()
+      odb = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+  File "apps/frappe/frappe/utils/backups.py", line 188, in get_backup
+    self.set_backup_file_name()
+      self = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+      older_than = 6
+      ignore_files = True
+      force = True
+      last_db = False
+      last_file = False
+      last_private_file = False
+      site_config_backup_path = False
+  File "apps/frappe/frappe/utils/backups.py", line 210, in set_backup_file_name
+    enc = "-enc" if frappe.get_system_settings("encrypt_backup") else ""
+      self = frappe.utils.backups.BackupGenerator(backup_excludes=[], backup_includes=[], backup_path=None, backup_path_conf=None, backup_path_db=None, backup_path_files=None, backup_path_private_files=None, compress_files=False, db_host='127.0.0.1', db_name='_26c933a307cad213', db_port=3306, db_socket=None, db_type='mariadb', exclude_doctypes='', ignore_conf=False, include_doctypes='', old_backup_metadata=False, partial=[], password='h4flpkX9f7Uqda0N', rollback_callback=frappe.utils.CallbackManager(-), site_slug='edu_local', user='_26c933a307cad213', verbose=True)
+      partial = ''
+      ext = 'tar'
+  File "apps/frappe/frappe/core/doctype/system_settings/system_settings.py", line 250, in get_system_settings
+    system_settings = frappe.client_cache.get_doc("System Settings")
+      key = ********
+      system_settings = None
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 566, in get_doc
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+      self = frappe.utils.redis_wrapper.ClientCache(cache={b'_26c933a307cad213|db_tables': frappe.utils.redis_wrapper.CachedValue(['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User...27.0.0.1,port=13006)>)>)>, invalidator_id=None, local_ttl=600, lock=<unlocked _thread.RLock object owner=0 count=0 at 0x750c58249270>, maxsize=1024, misses=0, redis=<frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>)
+      doctype = 'System Settings'
+      name = 'System Settings'
+      key = ********
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 505, in get_value
+    return self.redis.get_value(key, shared=shared, generator=generator)
+      self = frappe.utils.redis_wrapper.ClientCache(cache={b'_26c933a307cad213|db_tables': frappe.utils.redis_wrapper.CachedValue(['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User...27.0.0.1,port=13006)>)>)>, invalidator_id=None, local_ttl=600, lock=<unlocked _thread.RLock object owner=0 count=0 at 0x750c58249270>, maxsize=1024, misses=0, redis=<frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>)
+      key = ********
+      shared = False
+      generator = <function ClientCache.get_doc.<locals>.<lambda> at 0x750c5825be20>
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 106, in get_value
+    val = generator()
+      self = <frappe.utils.redis_wrapper.RedisWrapper(<redis.connection.ConnectionPool(<redis.connection.Connection(host=127.0.0.1,port=13006)>)>)>
+      key = ********
+      generator = <function ClientCache.get_doc.<locals>.<lambda> at 0x750c5825be20>
+      user = None
+      expires = False
+      shared = False
+      use_local_cache = True
+      original_key = ********
+      local_cache = {b'_26c933a307cad213|db_tables': ['tabLanguage', 'tabWorkspace Number Card', 'tabAsset Shift Factor', 'tabPayment Gateway Account', 'tabServer Script', 'tabFiscal Year', 'tabSupplier Scorecard Scoring Standing', 'tabNetwork Printer Settings', 'tabIssue Priority', 'tabSales Partner', 'tabItem Barcode', 'tabFee Component', 'tabDepartment', 'tabPrint Style', 'tabContract Fulfilment Checklist', 'tabCommunication', 'tabWorkflow Document State', 'tabUser', 'tabAsset Capitalization Asset Item', 'tabDesktop Icon', 'tabAsset Capitalization', 'tabSubcontracting Inward Order', 'tabStudent Attendance', 'tabPortal User', 'tabQuiz', 'tabWebhook', 'tabNote Seen By', 'tabDesktop Layout', 'tabPurchase Invoic...ender', 'tabCountry', 'tabRoute History', 'tabContract Template Fulfilment Terms', 'tabLanded Cost Item', 'tabDunning Letter Text', 'tabRequest for Quotation Supplier', 'tabIncoming Call Settings', 'tabVideo', 'tabModule Profile', 'tabWorkspace Chart'], b'_26c933a307cad213|defaults::__global': None}
+      val = None
+  File "apps/frappe/frappe/utils/redis_wrapper.py", line 566, in <lambda>
+    return self.get_value(key, generator=lambda: frappe.get_doc(doctype, name))
+      doctype = 'System Settings'
+      name = 'System Settings'
+  File "apps/frappe/frappe/model/utils/__init__.py", line 225, in wrapper
+    return dispatch(args[0])(*args, **kw)
+      args = ('System Settings', 'System Settings')
+      kw = {}
+      dispatch = <function simple_singledispatch.<locals>.dispatch at 0x750c5a2c26c0>
+      func = <function get_doc at 0x750c5a2c2610>
+  File "apps/frappe/frappe/model/document.py", line 124, in get_doc_str
+    if controller := get_controller(doctype):
+      doctype = 'System Settings'
+      name = 'System Settings'
+      kwargs = {}
+  File "apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+      doctype = 'System Settings'
+      site_controllers = {}
+  File "apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+      doctype = 'System Settings'
+      Document = frappe.model.document.Document
+      NestedSet = frappe.utils.nestedset.NestedSet
+      module_name = 'Core'
+  File "apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      doctype = 'DocType'
+      filters = 'System Settings'
+      fieldname = ('module', 'custom', 'is_tree')
+      ignore = False
+      as_dict = True
+      debug = False
+      order_by = 'KEEP_DEFAULT_ORDERING'
+      cache = False
+      for_update = False
+      run = True
+      pluck = False
+      distinct = False
+      skip_locked = False
+      wait = True
+  File "apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      doctype = 'DocType'
+      filters = 'System Settings'
+      fieldname = ('module', 'custom', 'is_tree')
+      ignore = False
+      as_dict = True
+      debug = False
+      order_by = 'creation'
+      update = None
+      cache = False
+      for_update = False
+      run = True
+      pluck = False
+      distinct = False
+      limit = 1
+      skip_locked = False
+      wait = True
+      is_single_doctype = <function is_single_doctype at 0x750c5a2a9c70>
+      out = None
+  File "apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+      args = ()
+      kwargs = {'table': 'DocType', 'filters': 'System Settings', 'order_by': 'creation', 'for_update': False, 'skip_locked': False, 'wait': True, 'fields': ('module', 'custom', 'is_tree'), 'distinct': False, 'limit': 1}
+      Engine = frappe.database.query.Engine
+  File "apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      table = 'DocType'
+      fields = ('module', 'custom', 'is_tree')
+      filters = 'System Settings'
+      order_by = 'creation'
+      group_by = None
+      limit = 1
+      offset = None
+      distinct = False
+      for_update = False
+      update = False
+      into = False
+      delete = False
+      validate_filters = False
+      skip_locked = False
+      wait = True
+      ignore_permissions = True
+      ignore_user_permissions = False
+      user = None
+      parent_doctype = None
+      reference_doctype = None
+      or_filters = None
+      db_query_compat = False
+      qb = frappe.query_builder.builder.MariaDB
+      db_type = 'mariadb'
+      is_select = True
+  File "apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      filters = {'name': 'System Settings'}
+      collect = None
+  File "apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      filters = {'name': 'System Settings'}
+      collect = None
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+  File "apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+      doctype = None
+      collect = None
+  File "apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+      self = frappe.database.query.Engine(apply_permissions=False, db_query_compat=False, doctype='DocType', field_aliases=set(), fields=["module", "custom", "is_tree"], function_aliases=set(), ignore_user_permissions=False, is_mariadb=True, is_postgres=False, is_sqlite=False, parent_doctype=None, permitted_fields_cache={}, query=SELECT `module`,`custom`,`is_tree` FROM `tabDocType`, reference_doctype=None, table="tabDocType", user='Administrator')
+      field = 'name'
+      value = 'System Settings'
+      operator = '='
+      doctype = None
+      builtin_operator = <module 'operator' from '/usr/lib/python3.14/operator.py'>
+  File "apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+      filter_config = {}
+  File "apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+      hook = 'filters_config'
+      default = '_KEEP_DEFAULT_LIST'
+      app_name = None
+  File "apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+      args = ()
+      kwargs = {}
+      site = 'edu.local'
+      arguments_key = ********
+      function_cache = {}
+      func = <function _load_app_hooks at 0x750c5ab9c5c0>
+  File "apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+      app_name = None
+      hooks = {}
+      types = <module 'types' from '/usr/lib/python3.14/types.py'>
+  File "apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+      args = ()
+      kwargs = {'_ensure_on_bench': True}
+      _cache = collections.defaultdict{<function get_installed_apps at 0x750c5ab9c300>: {}}
+      args_key = ********
+      func = <function get_installed_apps at 0x750c5ab9c300>
+  File "apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+      _ensure_on_bench = True
+  File "apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      key = ********
+      user = '__global'
+  File "apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      key = ********
+      parent = '__global'
+  File "apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+      key = ********
+      parent = '__global'
+  File "apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+      parent = '__global'
+      key = ********
+      defaults = None
+      table = "tabDefaultValue"
+  File "apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      args = ()
+      kwargs = {'as_dict': True}
+      dt = None
+      fields = []
+      child_queries = "_child_queries"
+      params = {'param1': '__global'}
+  File "apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      values = {'param1': '__global'}
+      as_dict = True
+      as_list = 0
+      debug = False
+      ignore_ddl = 0
+      auto_commit = 0
+      update = None
+      explain = False
+      run = True
+      pluck = False
+      as_iterator = False
+      query_type = 'select'
+      trace_id = None
+  File "apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+      self = frappe.database.mariadb.mysqlclient.MariaDBDatabase(after_commit=frappe.utils.CallbackManager(-), after_rollback=frappe.utils.CallbackManager(-), auto_commit_on_many_writes=0, before_commit=frappe.utils.CallbackManager(-), before_rollback=frappe.utils.CallbackManager(-), cur_db_name='_26c933a307cad213', db_type='mariadb', host='127.0.0.1', last_query='SELECT `table_name` FROM `information_schema`.`tables` WHERE `table_schema`='_26c933a307cad213'', logger=<Logger database-edu.local (WARNING)>, password='h4flpkX9f7Uqda0N', port=3306, socket=None, transaction_writes=0, type_map={'Currency': ('decimal', '21,9'), 'Int': ('int', '11'), 'Long Int': ('bigint', '20'), 'Float': ('decimal', '21,9'),...'), 'Color': ('varchar', 140), 'Barcode': ('longtext', ''), 'Geolocation': ('longtext', ''), 'Duration': ('decimal', '21,9'), 'Icon': ('varchar', 140), 'Phone': ('varchar', 140), 'Autocomplete': ('varchar', 140), 'JSON': ('json', '')}, user='_26c933a307cad213', value_cache=collections.defaultdict{})
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      values = {'param1': '__global'}
+  File "env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+      self = MySQLdb.cursors.Cursor(arraysize=1, description=None, description_flags=None, lastrowid=None, rowcount=None, rownumber=None)
+      query = 'SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`=%(param1)s ORDER BY `creation`'
+      args = {'param1': '__global'}
+      mogrified_query = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+  File "env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+      self = MySQLdb.cursors.Cursor(arraysize=1, description=None, description_flags=None, lastrowid=None, rowcount=None, rownumber=None)
+      q = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+      db = <_mysql.connection open to '127.0.0.1' at 0x33532400>
+  File "env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+      self = <_mysql.connection open to '127.0.0.1' at 0x33532400>
+      query = b"SELECT `defkey`,`defvalue` FROM `tabDefaultValue` WHERE `parent`='__global' ORDER BY `creation`"
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260427_113003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-27 11:30:07.421576
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_113003-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_113003-edu_local-database.sql.gz 928.3KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260427_173003-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-27 17:30:07.145970
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_173003-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_173003-edu_local-database.sql.gz 954.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260427_233002-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-27 23:30:06.058598
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_233002-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260427_233002-edu_local-database.sql.gz 954.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260428_113005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-28 11:30:09.912782
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260428_113005-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260428_113005-edu_local-database.sql.gz 954.7KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260428_173007-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-28 17:30:17.047139
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260428_173007-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260428_173007-edu_local-database.sql.gz 960.1KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260430_113004-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-30 11:30:10.372687
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260430_113004-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260430_113004-edu_local-database.sql.gz 968.3KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260430_173005-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-04-30 17:30:11.245486
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260430_173005-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260430_173005-edu_local-database.sql.gz 980.1KiB
+Backup for Site edu.local has been successfully completed
+set -o pipefail; /usr/bin/mariadb-dump --user=_26c933a307cad213 --host=127.0.0.1 --port=3306 --password=********** --single-transaction --quick --lock-tables=false _26c933a307cad213 | /usr/bin/gzip >> ./edu.local/private/backups/20260504_113006-edu_local-database.sql.gz
+
+Backup Summary for edu.local at 2026-05-04 11:30:16.986074
+Config  : /home/lenovo/edu-bench/sites/edu.local/private/backups/20260504_113006-edu_local-site_config_backup.json 194.0B
+Database: /home/lenovo/edu-bench/sites/edu.local/private/backups/20260504_113006-edu_local-database.sql.gz 997.0KiB
+Backup for Site edu.local has been successfully completed

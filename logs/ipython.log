@@ -1,0 +1,438 @@
+2026-03-09 13:20:00,640 INFO ipython === bench console session ===
+2026-03-09 13:20:00,640 INFO ipython exit;
+2026-03-09 13:20:00,641 INFO ipython === session end ===
+2026-03-09 13:21:40,588 INFO ipython === bench console session ===
+2026-03-09 13:21:40,589 INFO ipython import frappe
+2026-03-09 13:21:40,589 INFO ipython from frappe import _
+2026-03-09 13:21:40,590 INFO ipython def add_custom_fields():
+    fields = [
+        # --- School Identity ---
+        {
+            "dt": "Company",
+            "fieldname": "school_section",
+            "label": "School Information",
+            "fieldtype": "Section Break",
+            "insert_after": "domain",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "school_type",
+            "label": "School Type",
+            "fieldtype": "Select",
+            "options": "\nPrimary\nSecondary\nHigher Secondary\nUniversity\nCoaching\nVocational",
+            "insert_after": "school_section",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "school_category",
+            "label": "School Category",
+            "fieldtype": "Select",
+            "options": "\nGovernment\nPrivate\nAided\nInternational",
+            "insert_after": "school_type",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "affiliation_board",
+            "label": "Affiliation Board",
+            "fieldtype": "Select",
+            "options": "\nCBSE\nICSE\nState Board\nIB\nIGCSE\nCambridge",
+            "insert_after": "school_category",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "affiliation_number",
+            "label": "Affiliation Number",
+            "fieldtype": "Data",
+            "insert_after": "affiliation_board",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "udise_code",
+            "label": "UDISE Code",
+            "fieldtype": "Data",
+            "insert_after": "affiliation_number",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "registration_number",
+            "label": "Govt Registration Number",
+            "fieldtype": "Data",
+            "insert_after": "udise_code",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "year_of_establishment",
+            "label": "Year of Establishment",
+            "fieldtype": "Int",
+            "insert_after": "registration_number",
+        },
+
+        # --- Academic Setup ---
+        {
+            "dt": "Company",
+            "fieldname": "academic_section",
+            "label": "Academic Configuration",
+            "fieldtype": "Section Break",
+            "insert_after": "year_of_establishment",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "medium_of_instruction",
+            "label": "Medium of Instruction",
+            "fieldtype": "Select",
+            "options": "\nEnglish\nHindi\nRegional\nBilingual",
+            "insert_after": "academic_section",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "classes_offered",
+            "label": "Classes Offered",
+            "fieldtype": "Small Text",
+            "insert_after": "medium_of_instruction",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "streams_offered",
+            "label": "Streams Offered",
+            "fieldtype": "Select",
+            "options": "\nScience\nCommerce\nArts\nVocational\nAll",
+            "insert_after": "classes_offered",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "shift_type",
+            "label": "Shift Type",
+            "fieldtype": "Select",
+            "options": "\nMorning\nAfternoon\nBoth",
+            "insert_after": "streams_offered",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "academic_calendar_type",
+            "label": "Academic Calendar Type",
+            "fieldtype": "Select",
+            "options": "\nApril-March\nJune-May\nJanuary-December",
+            "insert_after": "shift_type",
+        },
+
+        # --- Principal Info ---
+        {
+            "dt": "Company",
+            "fieldname": "principal_section",
+            "label": "Principal Information",
+            "fieldtype": "Section Break",
+            "insert_after": "academic_calendar_type",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "principal_name",
+            "label": "Principal Name",
+            "fieldtype": "Data",
+            "insert_after": "principal_section",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "principal_email",
+            "label": "Principal Email",
+            "fieldtype": "Data",
+            "options": "Email",
+            "insert_after": "principal_name",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "principal_phone",
+            "label": "Principal Phone",
+            "fieldtype": "Data",
+            "insert_after": "principal_email",
+        },
+
+        # --- App Config ---
+        {
+            "dt": "Company",
+            "fieldname": "app_config_section",
+            "label": "App Configuration",
+            "fieldtype": "Section Break",
+            "insert_after": "principal_phone",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "school_slug",
+            "label": "School Slug",
+            "fieldtype": "Data",
+            "insert_after": "app_config_section",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "school_status",
+            "label": "School Status",
+            "fieldtype": "Select",
+            "options": "\nPending Approval\nActive\nSuspended",
+            "default": "Pending Approval",
+            "insert_after": "school_slug",
+        },
+        {
+            "dt": "Company",
+            "fieldname": "onboarding_completed",
+            "label": "Onboarding Completed",
+            "fieldtype": "Check",
+            "default": "0",
+            "insert_after": "school_status",
+        },
+    ]
+2026-03-09 13:21:40,590 INFO ipython     for f in fields:
+        if frappe.db.exists("Custom Field", {"dt": f["dt"], "fieldname": f["fieldname"]}):
+            print(f"SKIP (exists): {f['fieldname']}")
+            continue
+        doc = frappe.get_doc({"doctype": "Custom Field", **f})
+        doc.insert()
+        print(f"ADDED: {f['fieldname']}")
+2026-03-09 13:21:40,590 INFO ipython     frappe.db.commit()
+2026-03-09 13:21:40,590 INFO ipython     print("\n✅ All school fields added successfully.")
+2026-03-09 13:21:40,590 INFO ipython add_custom_fields()
+2026-03-09 13:21:40,590 INFO ipython === session end ===
+2026-03-09 13:23:31,241 INFO ipython === bench console session ===
+2026-03-09 13:23:31,242 INFO ipython import frappe
+
+custom_fields = [
+    {"fieldname": "school_section", "label": "School Information", "fieldtype": "Section Break", "insert_after": "domain"},
+    {"fieldname": "school_type", "label": "School Type", "fieldtype": "Select", "options": "\nPrimary\nSecondary\nHigher Secondary\nUniversity\nCoaching\nVocational", "insert_after": "school_section"},
+    {"fieldname": "school_category", "label": "School Category", "fieldtype": "Select", "options": "\nGovernment\nPrivate\nAided\nInternational", "insert_after": "school_type"},
+    {"fieldname": "affiliation_board", "label": "Affiliation Board", "fieldtype": "Select", "options": "\nCBSE\nICSE\nState Board\nIB\nIGCSE\nCambridge", "insert_after": "school_category"},
+    {"fieldname": "affiliation_number", "label": "Affiliation Number", "fieldtype": "Data", "insert_after": "affiliation_board"},
+    {"fieldname": "udise_code", "label": "UDISE Code", "fieldtype": "Data", "insert_after": "affiliation_number"},
+    {"fieldname": "registration_number", "label": "Govt Registration Number", "fieldtype": "Data", "insert_after": "udise_code"},
+    {"fieldname": "year_of_establishment", "label": "Year of Establishment", "fieldtype": "Int", "insert_after": "registration_number"},
+    {"fieldname": "principal_section", "label": "Principal Information", "fieldtype": "Section Break", "insert_after": "year_of_establishment"},
+    {"fieldname": "principal_name", "label": "Principal Name", "fieldtype": "Data", "insert_after": "principal_section"},
+    {"fieldname": "principal_email", "label": "Principal Email", "fieldtype": "Data", "insert_after": "principal_name"},
+    {"fieldname": "principal_phone", "label": "Principal Phone", "fieldtype": "Data", "insert_after": "principal_email"},
+    {"fieldname": "academic_section", "label": "Academic Configuration", "fieldtype": "Section Break", "insert_after": "principal_phone"},
+    {"fieldname": "medium_of_instruction", "label": "Medium of Instruction", "fieldtype": "Select", "options": "\nEnglish\nHindi\nRegional\nBilingual", "insert_after": "academic_section"},
+    {"fieldname": "shift_type", "label": "Shift Type", "fieldtype": "Select", "options": "\nMorning\nAfternoon\nBoth", "insert_after": "medium_of_instruction"},
+    {"fieldname": "academic_calendar_type", "label": "Academic Calendar Type", "fieldtype": "Select", "options": "\nApril-March\nJune-May\nJanuary-December", "insert_after": "shift_type"},
+    {"fieldname": "app_section", "label": "App Configuration", "fieldtype": "Section Break", "insert_after": "academic_calendar_type"},
+    {"fieldname": "school_slug", "label": "School Slug", "fieldtype": "Data", "insert_after": "app_section"},
+    {"fieldname": "school_status", "label": "School Status", "fieldtype": "Select", "options": "\nPending Approval\nActive\nSuspended", "default": "Pending Approval", "insert_after": "school_slug"},
+    {"fieldname": "onboarding_completed", "label": "Onboarding Completed", "fieldtype": "Check", "default": "0", "insert_after": "school_status"},
+]
+
+for f in custom_fields:
+    if frappe.db.exists("Custom Field", {"dt": "Company", "fieldname": f["fieldname"]}):
+        print(f"SKIP: {f['fieldname']}")
+        continue
+    frappe.get_doc({"doctype": "Custom Field", "dt": "Company", **f}).insert()
+    print(f"ADDED: {f['fieldname']}")
+
+frappe.db.commit()
+print("DONE")
+2026-03-09 13:23:31,242 INFO ipython bench --site edu.local mariadb
+2026-03-09 13:23:31,242 INFO ipython exit;
+2026-03-09 13:23:31,242 INFO ipython === session end ===
+2026-03-12 05:11:46,079 INFO ipython === bench console session ===
+2026-03-12 05:11:46,097 INFO ipython frappe.get_all('Role', filters={'role_name': 'School Admin'}, fields=['name'])
+2026-03-12 05:11:46,097 INFO ipython role = frappe.new_doc('Role')
+role.role_name = 'School Admin'
+role.desk_access = 1
+role.insert(ignore_permissions=True)
+frappe.db.commit()
+print("School Admin role created!")
+2026-03-12 05:11:46,097 INFO ipython exit;
+2026-03-12 05:11:46,099 INFO ipython === session end ===
+2026-03-12 05:14:58,740 INFO ipython === bench console session ===
+2026-03-12 05:14:58,741 INFO ipython print(frappe.get_all('Role', filters={'role_name': 'School Admin'}, fields=['name']))
+2026-03-12 05:14:58,741 INFO ipython user = frappe.new_doc('User')
+user.email = 'test@testschool.com'
+user.first_name = 'Test'
+user.last_name = 'Admin'
+user.new_password = 'Test@1234'
+user.mobile_no = '9999999999'
+user.send_welcome_email = 0
+user.enabled = 1
+user.append('roles', {'role': 'School Admin'})
+user.append('roles', {'role': 'System Manager'})
+user.insert(ignore_permissions=True)
+frappe.db.commit()
+print("Test user created:", user.name)
+2026-03-12 05:14:58,741 INFO ipython frappe.delete_doc('User', 'test@testschool.com', ignore_permissions=True)
+frappe.db.commit()
+print("Test user deleted")
+exit()
+2026-03-12 05:14:58,742 INFO ipython === session end ===
+2026-03-17 09:55:53,414 INFO ipython === bench console session ===
+2026-03-17 09:55:53,417 INFO ipython === session end ===
+2026-03-17 10:15:46,336 INFO ipython === bench console session ===
+2026-03-17 10:15:46,337 INFO ipython fields = [
+    {"fieldname": "classes_offered",            "label": "Classes Offered",           "fieldtype": "Small Text",  "insert_after": "year_of_establishment"},
+    {"fieldname": "streams_offered",            "label": "Streams Offered",           "fieldtype": "Small Text",  "insert_after": "classes_offered"},
+    {"fieldname": "address_line1",              "label": "Address",                   "fieldtype": "Small Text",  "insert_after": "website"},
+    {"fieldname": "landmark",                   "label": "Landmark",                  "fieldtype": "Data",        "insert_after": "address_line1"},
+    {"fieldname": "google_maps_link",           "label": "Google Maps Link",          "fieldtype": "Data",        "insert_after": "landmark"},
+    {"fieldname": "admin_contact_name",         "label": "Admin Contact Name",        "fieldtype": "Data",        "insert_after": "principal_phone"},
+    {"fieldname": "admin_contact_designation",  "label": "Admin Contact Designation", "fieldtype": "Data",        "insert_after": "admin_contact_name"},
+    {"fieldname": "admin_contact_email",        "label": "Admin Contact Email",       "fieldtype": "Data",        "insert_after": "admin_contact_designation"},
+    {"fieldname": "admin_contact_phone",        "label": "Admin Contact Phone",       "fieldtype": "Data",        "insert_after": "admin_contact_email"},
+    {"fieldname": "total_student_capacity",     "label": "Total Student Capacity",    "fieldtype": "Int",         "insert_after": "admin_contact_phone"},
+    {"fieldname": "number_of_classrooms",       "label": "Number of Classrooms",      "fieldtype": "Int",         "insert_after": "total_student_capacity"},
+    {"fieldname": "hostel_available",           "label": "Hostel Available",          "fieldtype": "Check",       "insert_after": "number_of_classrooms"},
+    {"fieldname": "transport_available",        "label": "Transport Available",       "fieldtype": "Check",       "insert_after": "hostel_available"},
+    {"fieldname": "subscription_plan",          "label": "Subscription Plan",         "fieldtype": "Select",      "options": "\nFree Trial (30 days)\nBasic\nStandard\nPremium\nEnterprise", "insert_after": "school_slug"},
+]
+
+for f in fields:
+    if not frappe.db.exists("Custom Field", {"dt": "Company", "fieldname": f["fieldname"]}):
+        frappe.get_doc({"doctype": "Custom Field", "dt": "Company", **f}).insert(ignore_permissions=True)
+        print(f"✅ Added: {f['fieldname']}")
+    else:
+        print(f"⏭️  Already exists: {f['fieldname']}")
+
+frappe.db.commit()
+print("🎉 Done!")
+2026-03-17 10:15:46,338 INFO ipython === session end ===
+2026-03-17 12:57:13,954 INFO ipython === bench console session ===
+2026-03-17 12:57:13,958 INFO ipython # Delete test companies
+for name in ["Test", "TestSchool2", "Ryan International School", "abc"]:
+    if frappe.db.exists("Company", name):
+        frappe.delete_doc("Company", name, force=True)
+
+# Delete test users  
+for email in ["test@test.com", "test2@test.com", "schooladmin@gmail.com"]:
+    if frappe.db.exists("User", email):
+        frappe.delete_doc("User", email, force=True)
+
+frappe.db.commit()
+print("Done!")
+2026-03-17 12:57:13,958 INFO ipython === session end ===
+2026-03-17 12:58:52,095 INFO ipython === bench console session ===
+2026-03-17 12:58:52,096 INFO ipython === session end ===
+2026-03-18 04:59:08,832 INFO ipython === bench console session ===
+2026-03-18 04:59:08,847 INFO ipython # 1. Check Company record
+company = frappe.get_doc("Company", "Sunrise Academy")
+print("=== COMPANY ===")
+print("Name:", company.company_name)
+print("Abbr:", company.abbr)
+print("Country:", company.country)
+print("Currency:", company.default_currency)
+print("Domain:", company.domain)
+
+# 2. Check custom fields saved
+print("\n=== CUSTOM FIELDS ===")
+print("School Type:", company.get("school_type"))
+print("School Category:", company.get("school_category"))
+print("Medium:", company.get("medium_of_instruction"))
+print("Shift:", company.get("shift_type"))
+print("Calendar:", company.get("academic_calendar_type"))
+print("Classes:", company.get("classes_offered"))
+print("Plan:", company.get("subscription_plan"))
+print("Status:", company.get("school_status"))
+
+# 3. Check User created
+user = frappe.get_doc("User", "admin@sunrise.com")
+print("\n=== USER ===")
+print("Email:", user.email)
+print("Name:", user.full_name)
+print("Enabled:", user.enabled)
+print("Roles:", [r.role for r in user.roles])
+
+# 4. Check all files attached
+files = frappe.get_all("File", 
+    filters={"attached_to_name": "Sunrise Academy"},
+    fields=["file_name", "file_url", "is_private"]
+)
+print("\n=== ATTACHED FILES ===")
+print(files if files else "No files attached")
+2026-03-18 04:59:08,847 INFO ipython === session end ===
+2026-04-17 16:50:51,348 INFO ipython === bench console session ===
+2026-04-17 16:50:51,349 INFO ipython user = frappe.get_doc("User", "vaishnavistd1@gmail.com")
+user.append("roles", {"role": "Student"})
+user.save()
+frappe.db.commit()
+print("Done:", [r.role for r in user.roles])
+2026-04-17 16:50:51,349 INFO ipython === session end ===
+2026-04-21 10:08:59,003 INFO ipython === bench console session ===
+2026-04-21 10:08:59,011 INFO ipython import frappe
+meta = frappe.get_meta("Fee Schedule")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:08:59,011 INFO ipython v
+2026-04-21 10:08:59,011 INFO ipython import frappe
+meta = frappe.get_meta("Fee Schedule Student Group")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:08:59,011 INFO ipython meta2 = frappe.get_meta("Fee Schedule Component")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 10:08:59,011 INFO ipython === session end ===
+2026-04-21 10:14:00,667 INFO ipython === bench console session ===
+2026-04-21 10:14:00,672 INFO ipython import frappe
+meta = frappe.get_meta("Fees")
+print([f.fieldname for f in meta.fields])
+2026-04-21 10:14:00,672 INFO ipython meta2 = frappe.get_meta("Fee Component")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 10:14:00,672 INFO ipython meta3 = frappe.get_meta("Payment Info")
+print([f.fieldname for f in meta3.fields])
+2026-04-21 10:14:00,672 INFO ipython clear
+2026-04-21 10:14:00,672 INFO ipython === session end ===
+2026-04-21 11:31:31,719 INFO ipython === bench console session ===
+2026-04-21 11:31:31,731 INFO ipython import frappe
+meta = frappe.get_meta("Fees")
+print([(f.fieldname, f.reqd) for f in meta.fields if f.reqd])
+2026-04-21 11:31:31,731 INFO ipython meta2 = frappe.get_meta("Fee Schedule")
+print([(f.fieldname, f.reqd) for f in meta2.fields if f.reqd])
+2026-04-21 11:31:31,731 INFO ipython clear
+2026-04-21 11:31:31,732 INFO ipython import frappe
+meta = frappe.get_meta("Course Schedule")
+print([f.fieldname for f in meta.fields])
+2026-04-21 11:31:31,732 INFO ipython === session end ===
+2026-04-21 11:39:48,729 INFO ipython === bench console session ===
+2026-04-21 11:39:50,486 INFO ipython import frappe
+meta = frappe.get_meta("Room")
+print([f.fieldname for f in meta.fields])
+2026-04-21 11:39:50,486 INFO ipython === session end ===
+2026-04-21 11:49:27,468 INFO ipython === bench console session ===
+2026-04-21 11:49:27,470 INFO ipython import frappe
+frappe.db.sql("SELECT error FROM `tabError Log` ORDER BY creation DESC LIMIT 3", as_dict=True)
+2026-04-21 11:49:27,470 INFO ipython === session end ===
+2026-04-21 11:53:51,947 INFO ipython === bench console session ===
+2026-04-21 11:53:51,949 INFO ipython import frappe
+# Check a student group to see what course field looks like
+frappe.db.get_value("Student Group", "BCA Batch A 101", ["group_based_on", "course"], as_dict=True)
+2026-04-21 11:53:51,949 INFO ipython # Check what the Course doctype names look like
+frappe.db.get_list("Course", fields=["name", "course_name"], limit=5)
+2026-04-21 11:53:51,949 INFO ipython === session end ===
+2026-04-21 11:57:15,344 INFO ipython === bench console session ===
+2026-04-21 11:57:15,346 INFO ipython import frappe
+meta = frappe.get_meta("Course Schedule")
+for f in meta.fields:
+    if f.fieldname == 'course':
+        print(f.reqd, f.fieldname, f.fieldtype, f.options)
+        
+2026-04-21 11:57:15,346 INFO ipython exir
+2026-04-21 11:57:15,346 INFO ipython === session end ===
+2026-04-21 12:00:18,958 INFO ipython === bench console session ===
+2026-04-21 12:00:18,959 INFO ipython import frappe
+meta = frappe.get_meta("Student Attendance")
+print([f.fieldname for f in meta.fields])
+2026-04-21 12:00:18,959 INFO ipython === session end ===
+2026-04-21 12:06:30,320 INFO ipython === bench console session ===
+2026-04-21 12:06:30,324 INFO ipython import frappe
+frappe.db.sql("SELECT error FROM `tabError Log` ORDER BY creation DESC LIMIT 1", as_dict=True)[0]['error'].split('\n')[-20:]
+2026-04-21 12:06:30,324 INFO ipython clear
+2026-04-21 12:06:30,325 INFO ipython import frappe
+meta = frappe.get_meta("Holiday List")
+print([f.fieldname for f in meta.fields])
+2026-04-21 12:06:30,325 INFO ipython meta2 = frappe.get_meta("Holiday")
+print([f.fieldname for f in meta2.fields])
+2026-04-21 12:06:30,325 INFO ipython === session end ===
+2026-04-21 13:18:02,542 INFO ipython === bench console session ===
+2026-04-21 13:18:02,565 INFO ipython // Simple direct test — paste and press Enter, check Network tab
+fetch('http://localhost:8006/api/resource/Student%20Attendance', {
+  method: 'POST',
+  headers: {
+    'Authorization': 'token c22af0809fb758f:7c971ea4c00e381',
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify({
+    student: 'EDU-STU-2025-00001',  // replace with any real student name from your DB
+    date: '2025-04-21',
+    status: 'Present',
+    student_group: 'your-group-name', // replace with real group
+  })
+}).then(r => r.json()).then(console.log).catch(console.error);
+2026-04-21 13:18:02,566 INFO ipython === session end ===

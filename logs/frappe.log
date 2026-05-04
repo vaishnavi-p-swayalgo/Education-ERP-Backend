@@ -1,0 +1,1079 @@
+2026-04-24 13:07:58,122 ERROR frappe Could not take error snapshot: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Site: edu.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 210, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 1038, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 125, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 64, in log_error
+    error_log = frappe.get_doc(
+    	doctype="Error Log",
+    ...<5 lines>...
+    	metadata=metadata,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 224, in wrapper
+    return func(*args, **kw)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 111, in get_doc
+    return get_doc_from_dict(kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 140, in get_doc_from_dict
+    if controller := get_controller(data["doctype"]):
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-24 13:07:58,124 ERROR frappe Could not take error snapshot: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Site: edu.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 210, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 1038, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 125, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 64, in log_error
+    error_log = frappe.get_doc(
+    	doctype="Error Log",
+    ...<5 lines>...
+    	metadata=metadata,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 224, in wrapper
+    return func(*args, **kw)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 111, in get_doc
+    return get_doc_from_dict(kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 140, in get_doc_from_dict
+    if controller := get_controller(data["doctype"]):
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-24 13:07:58,129 ERROR frappe Could not take error snapshot: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Site: edu.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 210, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 1038, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 125, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 64, in log_error
+    error_log = frappe.get_doc(
+    	doctype="Error Log",
+    ...<5 lines>...
+    	metadata=metadata,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 224, in wrapper
+    return func(*args, **kw)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 111, in get_doc
+    return get_doc_from_dict(kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 140, in get_doc_from_dict
+    if controller := get_controller(data["doctype"]):
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-24 13:08:08,197 ERROR frappe Could not take error snapshot: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Site: edu.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 210, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 1038, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 125, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 64, in log_error
+    error_log = frappe.get_doc(
+    	doctype="Error Log",
+    ...<5 lines>...
+    	metadata=metadata,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 224, in wrapper
+    return func(*args, **kw)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 111, in get_doc
+    return get_doc_from_dict(kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 140, in get_doc_from_dict
+    if controller := get_controller(data["doctype"]):
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-24 13:08:09,500 ERROR frappe Could not take error snapshot: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+Site: edu.local
+Form Dict: {}
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 102, in application
+    init_request(request)
+    ~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/app.py", line 178, in init_request
+    frappe.init(site, sites_path=_sites_path, force=True)
+    ~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 210, in init
+    setup_module_map(include_all_apps=not (frappe.request or frappe.job or frappe.flags.in_migrate))
+    ~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 1038, in setup_module_map
+    apps = get_installed_apps(_ensure_on_bench=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 65, in wrapper
+    return _cache[func][args_key]
+           ~~~~~~~~~~~~^^^^^^^^^^
+KeyError: ((), <object object at 0x7608a6c9cea0>, frozenset({('_ensure_on_bench', True)}))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 125, in log_error_snapshot
+    log_error(title=str(exception), defer_insert=True)
+    ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/error.py", line 64, in log_error
+    error_log = frappe.get_doc(
+    	doctype="Error Log",
+    ...<5 lines>...
+    	metadata=metadata,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/utils/__init__.py", line 224, in wrapper
+    return func(*args, **kw)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 111, in get_doc
+    return get_doc_from_dict(kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/document.py", line 140, in get_doc_from_dict
+    if controller := get_controller(data["doctype"]):
+                     ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 92, in get_controller
+    site_controllers[doctype] = import_controller(doctype)
+                                ~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/model/base_document.py", line 103, in import_controller
+    doctype_info = frappe.db.get_value("DocType", doctype, ("module", "custom", "is_tree"), as_dict=True)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 564, in get_value
+    result = self.get_values(
+    	doctype,
+    ...<13 lines>...
+    	wait=wait,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 667, in get_values
+    query = frappe.qb.get_query(
+    	table=doctype,
+    ...<7 lines>...
+    	limit=limit,
+    )
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 65, in get_query
+    return Engine().get_query(*args, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 289, in get_query
+    self.apply_filters(filters)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 380, in apply_filters
+    self.apply_dict_filters(filters, collect=collect)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 519, in apply_dict_filters
+    self._apply_filter(field, value, operator, collect=collect)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 530, in _apply_filter
+    criterion = self._build_criterion_for_simple_filter(field, value, operator, doctype)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/query.py", line 548, in _build_criterion_for_simple_filter
+    additional_filters_config = get_additional_filters_from_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/boot.py", line 427, in get_additional_filters_from_hooks
+    filter_hooks = frappe.get_hooks("filters_config")
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 986, in get_hooks
+    hooks = _site_cached_load_app_hooks()
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 157, in site_cache_wrapper
+    result = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 948, in _load_app_hooks
+    apps = [app_name] if app_name else get_installed_apps(_ensure_on_bench=True)
+                                       ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/utils/caching.py", line 71, in wrapper
+    return_val = func(*args, **kwargs)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/__init__.py", line 918, in get_installed_apps
+    installed = orjson.loads(db.get_global("installed_apps") or "[]")
+                             ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1142, in get_global
+    return self.get_default(key, user)
+           ~~~~~~~~~~~~~~~~^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1146, in get_default
+    d = self.get_defaults(key, parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 1162, in get_defaults
+    defaults = frappe.defaults.get_defaults_for(parent)
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/defaults.py", line 249, in get_defaults_for
+    .run(as_dict=True)
+     ~~~^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/query_builder/utils.py", line 131, in execute_query
+    result = frappe.local.db.sql(query, params, *args, **kwargs)  # nosemgrep
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 272, in sql
+    self.execute_query(query, values)
+    ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/apps/frappe/frappe/database/database.py", line 372, in execute_query
+    return self._cursor.execute(query, values)
+           ~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 179, in execute
+    res = self._query(mogrified_query)
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/cursors.py", line 330, in _query
+    db.query(q)
+    ~~~~~~~~^^^
+  File "/home/lenovo/edu-bench/env/lib/python3.14/site-packages/MySQLdb/connections.py", line 280, in query
+    _mysql.connection.query(self, query)
+    ~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^
+MySQLdb.OperationalError: (1932, "Table '_26c933a307cad213.tabDefaultValue' doesn't exist in engine")
+2026-04-27 10:42:21,242 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'DocType', 'name': 'Holiday List', 'cmd': 'frappe.client.get'}
+2026-04-27 11:01:38,818 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'holiday_list_name': 'Holiday List', 'from_date': '2025-08-15', 'to_date': '2026-04-10', 'weekly_off': 'Sunday', 'color': '#1a3a6b', 'holidays': [{'holiday_date': '2025-08-17', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-08-24', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-08-31', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-09-07', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-09-14', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-09-21', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-09-28', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-10-05', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-10-12', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-10-19', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-10-26', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-11-02', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-11-09', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-11-16', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-11-23', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-11-30', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-12-07', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-12-14', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-12-21', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-12-28', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-01-04', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-01-11', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-01-18', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-01-25', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-02-01', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-02-08', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-02-15', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-02-22', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-03-01', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-03-08', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-03-15', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-03-22', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-03-29', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2026-04-05', 'description': 'Sunday', 'weekly_off': 1, 'is_half_day': 0}, {'holiday_date': '2025-08-15', 'description': 'Independence Day', 'weekly_off': 0, 'is_half_day': 0}]}
+2026-04-28 11:32:03,169 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'holiday_list_name': 'Holiday List', 'from_date': '2025-08-15', 'to_date': '2026-04-10', 'weekly_off': 'Sunday', 'color': '#1a3a6b', 'holidays': [{'holiday_date': '2025-08-15', 'description': 'Independence Day', 'weekly_off': 0, 'is_half_day': 0}]}
+2026-04-28 11:34:01,939 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Company', 'fieldname': 'default_holiday_list', 'value': 'Holiday List 2025-26', 'cmd': 'frappe.client.set_value'}
+2026-04-28 11:34:28,188 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Company', 'fieldname': 'default_holiday_list', 'value': 'Holiday List 2025-26', 'cmd': 'frappe.client.set_value'}
+2026-04-28 11:45:49,658 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep R', 'company': 'Swayalgo', 'department': 'Computer Applications - S', 'designation': 'Programming Professor ', 'gender': 'Male', 'date_of_birth': '1997-08-31', 'date_of_joining': '2021-06-12', 'status': 'Active', 'user_id': ''}
+2026-04-28 11:47:45,806 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep R', 'company': 'Swayalgo', 'date_of_joining': '2021-06-12', 'status': 'Active', 'department': 'Computer Applications - S', 'designation': 'Programming Professor ', 'gender': 'Male', 'date_of_birth': '1997-08-31'}
+2026-04-28 11:48:24,858 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep R', 'company': 'Swayalgo', 'date_of_joining': '2021-06-12', 'status': 'Active', 'department': 'Computer Applications - S', 'designation': 'Programming Professor ', 'gender': 'Male', 'date_of_birth': '1997-08-30'}
+2026-04-28 11:51:58,239 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep R', 'company': 'Swayalgo', 'date_of_joining': '2021-06-12', 'status': 'Active', 'department': 'Computer Applications - S', 'designation': 'Programming Professor ', 'gender': 'Male', 'date_of_birth': '1998-06-05'}
+2026-04-28 11:55:20,662 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep R', 'company': 'Swayalgo', 'date_of_joining': '2021-06-12', 'status': 'Active', 'department': 'Computer Applications - S', 'gender': 'Male', 'date_of_birth': '1997-08-05'}
+2026-04-28 11:56:17,156 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'employee_name': 'Sudeep', 'company': 'Swayalgo', 'date_of_joining': '2021-06-12', 'status': 'Active', 'department': 'Computer Applications - S', 'gender': 'Male', 'date_of_birth': '1997-08-05'}
+2026-04-30 05:50:39,055 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fields': ['name', 'user'], 'filters': '[["user","!=",""]]', 'limit': '2000', 'limit_page_length': '2000'}
+2026-04-30 05:51:48,997 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fields': ['name', 'user'], 'filters': '[["user","!=",""]]', 'limit': '2000', 'limit_page_length': '2000'}
+2026-04-30 06:08:18,931 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'BCA Semester Grading Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 1, 'grade_code': 'A+', 'threshold': 90, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 2, 'grade_code': 'A', 'threshold': 80, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 3, 'grade_code': 'B', 'threshold': 70, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 4, 'grade_code': 'c', 'threshold': 60, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 5, 'grade_code': 'Fail', 'threshold': 49, 'grade_description': ''}]}
+2026-04-30 06:17:20,976 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'abc', 'intervals': [{'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 1, 'grade_code': 'a', 'threshold': 80, 'grade_description': ''}]}
+2026-04-30 06:22:43,726 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'Test Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 1, 'grade_code': 'A', 'threshold': 90, 'grade_description': 'Excellent'}]}
+2026-04-30 06:23:23,108 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'Test Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 1, 'grade_code': 'A', 'threshold': 90, 'grade_description': 'Excellent'}]}
+2026-04-30 06:27:16,672 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'Standard Percentage Grading Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 1, 'grade_code': 'A+', 'threshold': 90, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 2, 'grade_code': 'A', 'threshold': 80, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 3, 'grade_code': 'B+', 'threshold': 70, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 4, 'grade_code': 'B', 'threshold': 60, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 5, 'grade_code': 'C', 'threshold': 50, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 6, 'grade_code': 'D', 'threshold': 35, 'grade_description': ''}, {'doctype': 'Grading Scale Interval', 'parentfield': 'intervals', 'parenttype': 'Grading Scale', 'idx': 7, 'grade_code': 'Fail', 'threshold': 34, 'grade_description': ''}]}
+2026-04-30 06:40:28,585 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'Standard Percentage Grading Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'grade_code': 'A+', 'threshold': 90, 'grade_description': 'Excellent'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'A', 'threshold': 80, 'grade_description': 'Very Good'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'B+', 'threshold': 70, 'grade_description': 'Good'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'B', 'threshold': 60, 'grade_description': 'Average'}]}
+2026-04-30 06:40:42,537 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'grading_scale_name': 'Standard Percentage Grading Scale', 'intervals': [{'doctype': 'Grading Scale Interval', 'grade_code': 'A+', 'threshold': 90, 'grade_description': 'Excellent'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'A', 'threshold': 80, 'grade_description': 'Very Good'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'B+', 'threshold': 70, 'grade_description': 'Good'}, {'doctype': 'Grading Scale Interval', 'grade_code': 'B', 'threshold': 1, 'grade_description': 'Average'}]}
+2026-04-30 06:58:22,074 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'email': 'ketan@gmail.com', 'first_name': 'Ketan Rahul Shelar', 'user_type': 'Website User', 'new_password': '********', 'send_welcome_email': 0}
+2026-04-30 11:02:51,432 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'email': 'ketan@gmail.com', 'first_name': 'Ketan Rahul Shelar', 'user_type': 'Website User', 'new_password': '********', 'send_welcome_email': 0}
+2026-04-30 11:04:45,422 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fee_schedule': 'EDU-FSH-2026-00001', 'cmd': 'education.education.doctype.fee_schedule.fee_schedule.generate_fees'}
+2026-04-30 12:45:17,751 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 12:52:44,007 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 12:56:27,500 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 12:58:00,740 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:00:43,027 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:02:38,276 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-12', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:03:29,247 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:03:45,605 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 20, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:04:11,474 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 20}]}
+2026-04-30 13:04:20,512 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:04:24,228 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2026', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:04:37,375 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-13', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:05:34,881 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-14', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-04-30 13:05:42,358 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-14', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 500}]}
+2026-04-30 13:05:48,532 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 500, 'schedule_date': '2025-08-14', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 500}]}
+2026-04-30 13:06:09,167 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-14', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 50}, {'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 2, 'assessment_criteria': 'MCQ Test', 'maximum_score': 50}]}
+2026-04-30 13:09:54,311 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-14', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:11:01,086 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:12:54,019 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'parentfield': 'assessment_plan_criteria', 'parenttype': 'Assessment Plan', 'idx': 1, 'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:25:04,133 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:25:20,939 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'BCA Sem 1 Mid-Term 2025', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '12:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:25:50,848 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fee_schedule': 'EDU-FSH-2026-00001', 'cmd': 'education.education.doctype.fee_schedule.fee_schedule.generate_fees'}
+2026-04-30 13:43:56,549 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fee_schedule': 'EDU-FSH-2026-00001', 'cmd': 'education.education.doctype.fee_schedule.fee_schedule.generate_fees'}
+2026-04-30 13:44:14,737 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'fee_schedule': 'EDU-FSH-2026-00001', 'cmd': 'education.education.doctype.fee_schedule.fee_schedule.generate_fees'}
+2026-04-30 13:45:48,304 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '10:30', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:46:08,422 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-15', 'from_time': '09:00', 'to_time': '10:30', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:57:22,085 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '12:30', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 13:59:48,067 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-16', 'from_time': '10:00', 'to_time': '12:30', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 14:09:04,851 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 100, 'schedule_date': '2025-08-16', 'from_time': '10:00', 'to_time': '12:30', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 100}]}
+2026-04-30 14:09:51,887 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '10:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 04:54:09,610 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '10:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:17:12,921 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:17:16,233 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:22:03,052 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:23:40,170 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '11:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:30:10,962 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': {'doctype': 'Assessment Plan', 'assessment_name': 'Mid Term I Exam ', 'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'Unit Test', 'grading_scale': 'Standard Percentage Grading Scale', 'program': 'Bachelor of Computer Applications (BCA)', 'academic_year': '2025-26', 'academic_term': '2025-26 (SEM I)', 'maximum_assessment_score': 50, 'schedule_date': '2025-08-16', 'from_time': '09:00', 'to_time': '10:00', 'room': 'HTL-ROOM-2026-00004', 'examiner': 'Sudeep', 'supervisor': 'Sudeep', 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}, 'cmd': 'frappe.client.insert'}
+2026-05-04 05:35:49,754 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","assessment_name":"Mid Term I Exam ","student_group":"BCA 201","course":"Programming Fundamentals","assessment_group":"Unit Test","grading_scale":"Standard Percentage Grading Scale","program":"Bachelor of Computer Applications (BCA)","academic_year":"2025-26","academic_term":"2025-26 (SEM I)","maximum_assessment_score":50,"schedule_date":"2025-08-16","from_time":"09:00","to_time":"11:00","room":"HTL-ROOM-2026-00004","examiner":"Sudeep","supervisor":"Sudeep","assessment_plan_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:38:03,286 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Assessment Plan', 'name': '', 'cmd': 'frappe.client.get'}
+2026-05-04 05:38:41,678 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","student_group":"COMP-2024","course":"Introduction to Computer Science","assessment_group":"Mid Term","maximum_assessment_score":50,"assessment_plan_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:39:03,908 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","student_group":"BCA 201","course":"Programming Fundamentals","assessment_group":"All Assessment Groups","maximum_assessment_score":50,"assessment_plan_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:39:33,921 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","student_group":"BCA 201","course":"Programming Fundamentals","assessment_group":"All Assessment Groups","maximum_assessment_score":50,"assessment_plan_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:39:44,266 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","student_group":"BCA 201","course":"Programming Fundamentals","assessment_group":"All Assessment Groups","maximum_assessment_score":50,"assessment_plan_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:40:36,510 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'student_group': 'BCA 201', 'course': 'Programming Fundamentals', 'assessment_group': 'All Assessment Groups', 'maximum_assessment_score': 50, 'assessment_plan_criteria': [{'doctype': 'Assessment Plan Criteria', 'assessment_criteria': 'Written Exam', 'maximum_score': 50}]}
+2026-05-04 05:41:04,999 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'frappe.utils.get_site_info'}
+2026-05-04 05:41:05,084 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Assessment Plan', 'name': '__last__', 'cmd': 'frappe.client.get'}
+2026-05-04 05:51:27,849 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","student_group":"BCA 201","course":"Programming Fundamentals","assessment_group":"All Assessment Groups","maximum_assessment_score":50,"assessment_criteria":[{"doctype":"Assessment Plan Criteria","assessment_criteria":"Written Exam","maximum_score":50}]}', 'cmd': 'frappe.client.insert'}
+2026-05-04 05:54:51,681 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","name":"EDU-ASP-2026-00001"}', 'cmd': 'frappe.client.submit'}
+2026-05-04 05:55:14,497 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","name":"EDU-ASP-2026-00001"}', 'cmd': 'frappe.client.submit'}
+2026-05-04 05:55:23,061 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","name":"EDU-ASP-2026-00001"}', 'cmd': 'frappe.client.submit'}
+2026-05-04 05:55:29,826 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","name":"EDU-ASP-2026-00001"}', 'cmd': 'frappe.client.submit'}
+2026-05-04 05:57:01,285 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"doctype":"Assessment Plan","name":"EDU-ASP-2026-00001"}', 'cmd': 'frappe.client.submit'}
+2026-05-04 06:17:58,443 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_student_info'}
+2026-05-04 06:18:10,631 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_student_info'}
+2026-05-04 06:20:12,838 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:20:15,689 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:20:18,878 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:20:22,032 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:20:27,032 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:27:53,036 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:54:04,914 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:54:13,312 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:55:54,884 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:55:59,174 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:58:08,508 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Course Schedule","name":"new-course-schedule-crykxxjtxf","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"EDU-CSH-.YYYY.-","class_schedule_color":"blue","schedule_date":"2026-05-04","program":"Bachelor of Computer Applications (BCA)","student_group":"BCA 201","instructor_name":"Sudeep","instructor":"Sudeep","course":"Programming Fundamentals","from_time":"12:27:48","to_time":"14:27:55","room":"HTL-ROOM-2026-00001"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2026-05-04 06:58:25,258 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doc': '{"docstatus":0,"doctype":"Course Schedule","name":"new-course-schedule-crykxxjtxf","__islocal":1,"__unsaved":1,"owner":"Administrator","naming_series":"EDU-CSH-.YYYY.-","class_schedule_color":"blue","schedule_date":"2025-05-04","program":"Bachelor of Computer Applications (BCA)","student_group":"BCA 201","instructor_name":"Sudeep","instructor":"Sudeep","course":"Programming Fundamentals","from_time":"12:27:48","to_time":"14:27:55","room":"HTL-ROOM-2026-00001"}', 'action': 'Save', 'cmd': 'frappe.desk.form.save.savedocs'}
+2026-05-04 06:59:01,277 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:59:05,002 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:59:07,393 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 06:59:08,756 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 07:06:49,151 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'cmd': 'education.education.api.get_course_schedule_for_student'}
+2026-05-04 07:07:31,846 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Student Applicant', 'fields': '["`tabStudent Applicant`.`name`","`tabStudent Applicant`.`owner`","`tabStudent Applicant`.`creation`","`tabStudent Applicant`.`modified`","`tabStudent Applicant`.`modified_by`","`tabStudent Applicant`.`_user_tags`","`tabStudent Applicant`.`_comments`","`tabStudent Applicant`.`_assign`","`tabStudent Applicant`.`_liked_by`","`tabStudent Applicant`.`docstatus`","`tabStudent Applicant`.`idx`","`tabStudent Applicant`.`program`","`tabStudent Applicant`.`title`","`tabStudent Applicant`.`image`","`tabStudent Applicant`.`application_status`","`tabStudent Applicant`.`paid`"]', 'filters': '[]', 'order_by': '`tabStudent Applicant`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2026-05-04 07:07:36,937 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'User', 'name': 'Administrator', 'cmd': 'frappe.desk.form.load.getdoc'}
+2026-05-04 07:07:38,641 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'doctype': 'Student Applicant', 'fields': '["`tabStudent Applicant`.`name`","`tabStudent Applicant`.`owner`","`tabStudent Applicant`.`creation`","`tabStudent Applicant`.`modified`","`tabStudent Applicant`.`modified_by`","`tabStudent Applicant`.`_user_tags`","`tabStudent Applicant`.`_comments`","`tabStudent Applicant`.`_assign`","`tabStudent Applicant`.`_liked_by`","`tabStudent Applicant`.`docstatus`","`tabStudent Applicant`.`idx`","`tabStudent Applicant`.`program`","`tabStudent Applicant`.`title`","`tabStudent Applicant`.`image`","`tabStudent Applicant`.`application_status`","`tabStudent Applicant`.`paid`"]', 'filters': '[]', 'order_by': '`tabStudent Applicant`.`modified` desc', 'start': '0', 'page_length': '20', 'view': 'List', 'group_by': '', 'with_comment_count': '1', 'cmd': 'frappe.desk.reportview.get'}
+2026-05-04 07:18:34,095 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'email': 'neha@gmail.com', 'first_name': 'Neha  Mohan Thakare', 'user_type': 'Website User', 'new_password': '********', 'send_welcome_email': 0, 'roles': [{'doctype': 'Has Role', 'role': 'Student'}]}
+2026-05-04 07:18:34,467 ERROR frappe New Exception collected in error log
+Site: edu.local
+Form Dict: {'user': 'neha@gmail.com'}

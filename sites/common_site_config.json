@@ -1,0 +1,23 @@
+{
+ "allow_cors": "*",
+ "background_workers": 1,
+ "cors_origin": "http://localhost:4200",
+ "default_site": "edu.local",
+ "developer_mode": 1,
+ "file_watcher_port": 6793,
+ "frappe_user": "lenovo",
+ "gunicorn_workers": 9,
+ "ignore_csrf": 1,
+ "live_reload": true,
+ "rebase_on_pull": false,
+ "redis_cache": "redis://127.0.0.1:13006",
+ "redis_queue": "redis://127.0.0.1:11006",
+ "redis_socketio": "redis://127.0.0.1:13006",
+ "restart_supervisor_on_update": false,
+ "restart_systemd_on_update": false,
+ "serve_default_site": true,
+ "shallow_clone": true,
+ "socketio_port": 9006,
+ "use_redis_auth": false,
+ "webserver_port": 8006
+}
