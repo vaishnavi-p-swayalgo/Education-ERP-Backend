@@ -258,6 +258,14 @@ app_license = "mit"
 
 
 fixtures = [
+    {"dt": "Custom DocPerm", "filters": [["parent", "in", ["Student Applicant", "Student"]]]},
     {"dt": "Custom Field", "filters": [["dt", "in", ["Program", "Batch Name", "Student", "Course", "Student Group", "Student Applicant", "Program Enrollment", "Fee Structure", "Assessment Plan"]]]},
     {"dt": "Property Setter", "filters": [["doc_type", "in", ["Program", "Batch Name", "Student", "Course"]]]},
 ]
+
+doc_events = {
+	"Student Applicant": {
+		"validate": "school_erp.admissions_hooks.validate_student_applicant",
+		"on_update": "school_erp.admissions_hooks.on_update_student_applicant"
+	}
+}

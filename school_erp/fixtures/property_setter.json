@@ -1,1 +1,18 @@
-[]
+[
+ {
+  "default_value": null,
+  "doc_type": "Student",
+  "docstatus": 0,
+  "doctype": "Property Setter",
+  "doctype_or_field": "DocField",
+  "field_name": "naming_series",
+  "is_system_generated": 1,
+  "modified": "2026-06-24 17:40:46.428145",
+  "module": null,
+  "name": "Student-naming_series-options",
+  "property": "options",
+  "property_type": "Text",
+  "row_name": null,
+  "value": "ADM/.YYYY./.#####"
+ }
+]
