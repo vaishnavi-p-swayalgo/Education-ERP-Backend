@@ -257,18 +257,8 @@ app_license = "mit"
 # ignore_translatable_strings_from = []
 
 fixtures = [
-    {
-        "doctype": "Custom Field",
-        "filters": [
-            ["dt", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order", "Student", "Guardian"]]
-        ]
-    },
-    {
-        "doctype": "Property Setter",
-        "filters": [
-            ["doc_type", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order", "Student", "Guardian"]]
-        ]
-    }
+    {"doctype": "Custom Field"},
+    {"doctype": "Property Setter"}
 ]
 
 
