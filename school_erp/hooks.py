@@ -260,13 +260,13 @@ fixtures = [
     {
         "doctype": "Custom Field",
         "filters": [
-            ["dt", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order"]]
+            ["dt", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order", "Student", "Guardian"]]
         ]
     },
     {
         "doctype": "Property Setter",
         "filters": [
-            ["doc_type", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order"]]
+            ["doc_type", "in", ["Academic Year", "Program", "Student Group", "Course", "Program Course", "Student Applicant", "Sales Invoice", "Sales Order", "Student", "Guardian"]]
         ]
     }
 ]
