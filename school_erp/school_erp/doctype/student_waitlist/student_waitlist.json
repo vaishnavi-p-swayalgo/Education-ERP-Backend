@@ -1,0 +1,115 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-26 12:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "student_name",
+  "date_of_birth",
+  "standard",
+  "guardian_name",
+  "guardian_mobile",
+  "inquiry_date",
+  "rank",
+  "notified"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "no_copy": 1,
+   "options": "WTL-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "reqd": 1,
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "date_of_birth",
+   "fieldtype": "Date",
+   "label": "Date of Birth"
+  },
+  {
+   "fieldname": "standard",
+   "fieldtype": "Link",
+   "label": "Standard",
+   "options": "Program",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "guardian_name",
+   "fieldtype": "Data",
+   "label": "Guardian Name"
+  },
+  {
+   "fieldname": "guardian_mobile",
+   "fieldtype": "Data",
+   "label": "Guardian Mobile"
+  },
+  {
+   "fieldname": "inquiry_date",
+   "fieldtype": "Date",
+   "label": "Inquiry Date",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "rank",
+   "fieldtype": "Int",
+   "label": "Rank",
+   "in_list_view": 1
+  },
+  {
+   "default": "0",
+   "fieldname": "notified",
+   "fieldtype": "Check",
+   "label": "Notified",
+   "in_list_view": 1
+  }
+ ],
+ "modified": "2026-06-26 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "School ERP",
+ "name": "Student Waitlist",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "rank",
+ "sort_order": "ASC"
+}

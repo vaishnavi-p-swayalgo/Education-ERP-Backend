@@ -1,0 +1,137 @@
+{
+ "actions": [],
+ "allow_import": 1,
+ "allow_rename": 1,
+ "autoname": "naming_series:",
+ "creation": "2026-06-26 12:00:00.000000",
+ "doctype": "DocType",
+ "document_type": "Document",
+ "engine": "InnoDB",
+ "field_order": [
+  "naming_series",
+  "student_id",
+  "student_name",
+  "standard",
+  "gender",
+  "caste_category",
+  "religion",
+  "reimbursement_status",
+  "reimbursement_amount",
+  "claim_invoice_number",
+  "claim_date",
+  "received_date"
+ ],
+ "fields": [
+  {
+   "fieldname": "naming_series",
+   "fieldtype": "Select",
+   "label": "Naming Series",
+   "no_copy": 1,
+   "options": "RTE-.YYYY.-",
+   "set_only_once": 1
+  },
+  {
+   "fieldname": "student_id",
+   "fieldtype": "Data",
+   "label": "Student ID",
+   "reqd": 1,
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "student_name",
+   "fieldtype": "Data",
+   "label": "Student Name",
+   "reqd": 1,
+   "in_global_search": 1
+  },
+  {
+   "fieldname": "standard",
+   "fieldtype": "Link",
+   "label": "Standard",
+   "options": "Program",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "gender",
+   "fieldtype": "Link",
+   "label": "Gender",
+   "options": "Gender"
+  },
+  {
+   "fieldname": "caste_category",
+   "fieldtype": "Select",
+   "label": "Caste Category",
+   "options": "General\nOBC\nSC\nST\nVJ-NT\nSBC"
+  },
+  {
+   "fieldname": "religion",
+   "fieldtype": "Data",
+   "label": "Religion"
+  },
+  {
+   "default": "Pending",
+   "fieldname": "reimbursement_status",
+   "fieldtype": "Select",
+   "label": "Reimbursement Status",
+   "options": "Pending\nClaimed\nReceived",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "reimbursement_amount",
+   "fieldtype": "Currency",
+   "label": "Reimbursement Amount",
+   "in_list_view": 1
+  },
+  {
+   "fieldname": "claim_invoice_number",
+   "fieldtype": "Data",
+   "label": "Claim Invoice Number"
+  },
+  {
+   "fieldname": "claim_date",
+   "fieldtype": "Date",
+   "label": "Claim Date"
+  },
+  {
+   "fieldname": "received_date",
+   "fieldtype": "Date",
+   "label": "Received Date"
+  }
+ ],
+ "modified": "2026-06-26 12:00:00.000000",
+ "modified_by": "Administrator",
+ "module": "School ERP",
+ "name": "RTE Admission",
+ "naming_rule": "By \"Naming Series\" field",
+ "owner": "Administrator",
+ "permissions": [
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "System Manager",
+   "share": 1,
+   "write": 1
+  },
+  {
+   "create": 1,
+   "delete": 1,
+   "email": 1,
+   "export": 1,
+   "import": 1,
+   "print": 1,
+   "read": 1,
+   "report": 1,
+   "role": "Academics User",
+   "share": 1,
+   "write": 1
+  }
+ ],
+ "sort_field": "modified",
+ "sort_order": "DESC"
+}
