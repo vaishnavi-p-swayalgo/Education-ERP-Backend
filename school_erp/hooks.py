@@ -258,7 +258,15 @@ app_license = "mit"
 
 fixtures = [
     {"doctype": "Custom Field"},
-    {"doctype": "Property Setter"}
+    {"doctype": "Property Setter"},
+    {"dt": "DocType", "filters": [["module", "=", "School ERP"], ["custom", "=", 1]]}
 ]
 
 
+
+doc_events = {
+    "Program Enrollment": {
+        "on_submit": "school_erp.api.student_groups.enroll_student_in_group",
+        "on_cancel": "school_erp.api.student_groups.unenroll_student_from_group"
+    }
+}
