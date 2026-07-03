@@ -319,7 +319,7 @@ def assign_hr_role(employee_id):
 
 
 @frappe.whitelist()
-def create_guardian(guardian_name, email_address, mobile_number):
+def create_guardian(guardian_name, email_address, mobile_number, student=None):
     frappe.only_for("System Manager")
     
     guardian = frappe.get_doc({
@@ -328,6 +328,12 @@ def create_guardian(guardian_name, email_address, mobile_number):
         "email_address": email_address,
         "mobile_number": mobile_number
     })
+    
+    if student:
+        guardian.append("students", {
+            "student": student
+        })
+        
     guardian.insert(ignore_permissions=True)
     return {"status": "success", "guardian_id": guardian.name}
 

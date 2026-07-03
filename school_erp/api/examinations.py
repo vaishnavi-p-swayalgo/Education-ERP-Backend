@@ -16,17 +16,31 @@ def bulk_create_exam_schedule(payload):
     if not all([academic_term, assessment_group, program, grading_scale, schedule]):
         return {"status": "error", "message": "Missing mandatory fields for exam schedule creation."}
     
-    # Get all student groups (divisions) under this program
-    groups = frappe.db.get_all("Student Group", filters={"program": program}, pluck="name")
-    
-    if not groups:
-        return {"status": "error", "message": f"No active divisions (Student Groups) found for program {program}."}
-        
+    # We will fetch groups per subject intelligently
     created_count = 0
     
-    for group in groups:
-        for subj in schedule:
-            course = subj.get("course")
+    for subj in schedule:
+        course = subj.get("course")
+        
+        # 1. Try to find Course-specific Student Groups for this subject
+        groups = frappe.db.get_all(
+            "Student Group", 
+            filters={"program": program, "group_based_on": "Course", "course": course}, 
+            pluck="name"
+        )
+        
+        # 2. If no course-specific groups exist, fallback to general Batch divisions
+        if not groups:
+            groups = frappe.db.get_all(
+                "Student Group", 
+                filters={"program": program, "group_based_on": "Batch"}, 
+                pluck="name"
+            )
+            
+        if not groups:
+            continue # No valid student groups found for this subject/program
+            
+        for group in groups:
             # check if exists
             exists = frappe.db.exists("Assessment Plan", {
                 "student_group": group,
@@ -52,8 +66,25 @@ def bulk_create_exam_schedule(payload):
                 "assessment_name": f"{assessment_group} - {course} - {group}"
             })
             
+            # Frappe requires assessment_criteria to sum up to maximum_assessment_score
+            default_criteria = "Theory Exam"
+            if not frappe.db.exists("Assessment Criteria", default_criteria):
+                frappe.get_doc({
+                    "doctype": "Assessment Criteria",
+                    "assessment_criteria": default_criteria
+                }).insert(ignore_permissions=True)
+                
+            doc.append("assessment_criteria", {
+                "assessment_criteria": default_criteria,
+                "maximum_score": float(subj.get("maximum_score") or 100)
+            })
+            
             doc.insert(ignore_permissions=True)
             doc.submit()
+            
+            # Force update academic_term to bypass 'fetch_from' logic
+            frappe.db.set_value("Assessment Plan", doc.name, "academic_term", academic_term)
+            
             created_count += 1
             
     return {"status": "success", "created": created_count}
