@@ -43,6 +43,15 @@ def generate_teacher_accounts():
         
         # Link user to employee
         frappe.db.set_value("Employee", teacher.name, "user_id", email)
+        
+        # Restrict data access via User Permissions
+        from frappe.permissions import add_user_permission
+        add_user_permission("Employee", teacher.name, email)
+        
+        instructor_name = frappe.db.get_value("Instructor", {"employee": teacher.name}, "name")
+        if instructor_name:
+            add_user_permission("Instructor", instructor_name, email)
+            
         generated += 1
         
     return {"status": "success", "generated": generated}
@@ -101,6 +110,10 @@ def generate_student_accounts(standards=None):
         )
         
         frappe.db.set_value("Student", student.name, "student_email_id", email)
+        
+        from frappe.permissions import add_user_permission
+        add_user_permission("Student", student.name, email)
+        
         generated += 1
         
     return {"status": "success", "generated": generated}
@@ -134,6 +147,8 @@ def generate_guardian_accounts():
         # Check if user already exists
         if frappe.db.exists("User", email):
             frappe.db.set_value("Guardian", guard.name, "user", email)
+            from frappe.permissions import add_user_permission
+            add_user_permission("Guardian", guard.name, email)
             continue
             
         user = create_user(
@@ -145,6 +160,10 @@ def generate_guardian_accounts():
         )
         
         frappe.db.set_value("Guardian", guard.name, "user", email)
+        
+        from frappe.permissions import add_user_permission
+        add_user_permission("Guardian", guard.name, email)
+        
         generated += 1
         
     return {"status": "success", "generated": generated}
@@ -167,20 +186,21 @@ def get_all_accounts():
 
 
 @frappe.whitelist(allow_guest=True)
-def set_first_password(new_password):
-    # This endpoint is called when user first logs in
-    if frappe.session.user == "Guest":
-        frappe.throw(_("Not logged in"))
+def set_first_password(email, new_password):
+    if not email:
+        frappe.throw(_("Email is required"))
         
-    user = frappe.get_doc("User", frappe.session.user)
+    if not frappe.db.exists("User", email):
+        frappe.throw(_("User not found"))
+        
+    user = frappe.get_doc("User", email)
     
     if user.first_login_done:
-        # Already done, maybe they are just changing password, but for now we only handle first login
-        pass
+        frappe.throw(_("Password already set for this user"))
         
-    # Set the new password via auth wrapper
-    from frappe.core.doctype.user.user import update_password
-    update_password(new_password=new_password, logout_all_sessions=False)
+    # Set new_password property which triggers Frappe's built-in password policy validation on save
+    user.new_password = new_password
+    user.save(ignore_permissions=True)
     
     # Update custom fields
     user.db_set("user_set_password", new_password)
