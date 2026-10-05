@@ -143,17 +143,21 @@ def get_homework(student):
     return hw
 
 @frappe.whitelist()
-def get_timetable(student):
+def get_timetable(student, date_start=None, date_end=None):
     enrollments = frappe.get_all("Student Group Student", {"student": student, "active": 1}, pluck="parent")
     if not enrollments:
         return []
         
-    today = datetime.datetime.now().date()
-    start_of_week = today - datetime.timedelta(days=today.weekday())
-    end_of_week = start_of_week + datetime.timedelta(days=6)
+    if date_start and date_end:
+        start_of_week = date_start
+        end_of_week = date_end
+    else:
+        today = datetime.datetime.now().date()
+        start_of_week = today - datetime.timedelta(days=today.weekday())
+        end_of_week = start_of_week + datetime.timedelta(days=6)
     
     schedule = frappe.get_all("Course Schedule",
-        filters={"student_group": ["in", enrollments], "schedule_date": ["between", [start_of_week, end_of_week]]},
+        filters={"student_group": ["in", enrollments], "schedule_date": ["between", [start_of_week, end_of_week]], "docstatus": ["<", 2]},
         fields=["name", "title", "course", "instructor_name", "schedule_date", "from_time", "to_time", "room", "color"])
         
     return schedule

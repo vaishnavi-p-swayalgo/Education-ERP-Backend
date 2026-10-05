@@ -22,37 +22,41 @@ def generate_teacher_accounts():
     generated = 0
     from frappe.model.naming import make_autoname
     for teacher in teachers:
-        first = (teacher.first_name or teacher.employee_name or "tch").lower().strip().replace(" ", "")
-        last = (teacher.last_name or "").lower().strip().replace(" ", "")
-        base_name = f"{first}_{last}" if last else first
-        
-        seq = make_autoname("EMP-.####").split("-")[1]
-        username = f"{base_name}_{seq}"
-        email = f"tch_{username}@school.local"
-        
-        name_prefix = (teacher.first_name or teacher.employee_name or "Tch")[:3].capitalize()
-        sys_pwd = f"{name_prefix}{teacher.name}@{generate_random_digits(2)}"
-        
-        user = create_user(
-            email=email,
-            username=username,
-            first_name=teacher.employee_name,
-            role="Instructor",
-            sys_pwd=sys_pwd
-        )
-        
-        # Link user to employee
-        frappe.db.set_value("Employee", teacher.name, "user_id", email)
-        
-        # Restrict data access via User Permissions
-        from frappe.permissions import add_user_permission
-        add_user_permission("Employee", teacher.name, email)
-        
-        instructor_name = frappe.db.get_value("Instructor", {"employee": teacher.name}, "name")
-        if instructor_name:
-            add_user_permission("Instructor", instructor_name, email)
+        try:
+            first = (teacher.first_name or teacher.employee_name or "tch").lower().strip().replace(" ", "")
+            last = (teacher.last_name or "").lower().strip().replace(" ", "")
+            base_name = f"{first}_{last}" if last else first
             
-        generated += 1
+            seq = make_autoname("EMP-.####").split("-")[1]
+            username = f"{base_name}_{seq}"
+            email = f"tch_{username}@school.local"
+            
+            name_prefix = (teacher.first_name or teacher.employee_name or "Tch")[:3].capitalize()
+            sys_pwd = f"{name_prefix}{teacher.name}@{generate_random_digits(2)}"
+            
+            user = create_user(
+                email=email,
+                username=username,
+                first_name=teacher.employee_name,
+                role="Instructor",
+                sys_pwd=sys_pwd
+            )
+            
+            # Link user to employee
+            frappe.db.set_value("Employee", teacher.name, "user_id", email)
+            
+            # Restrict data access via User Permissions
+            from frappe.permissions import add_user_permission
+            add_user_permission("Employee", teacher.name, email)
+            
+            instructor_name = frappe.db.get_value("Instructor", {"employee": teacher.name}, "name")
+            if instructor_name:
+                add_user_permission("Instructor", instructor_name, email)
+                
+            generated += 1
+        except Exception as e:
+            frappe.log_error(title=f"Failed to generate account for teacher {teacher.name}", message=frappe.get_traceback())
+            continue
         
     return {"status": "success", "generated": generated}
 
@@ -80,41 +84,46 @@ def generate_student_accounts(standards=None):
         FROM `tabProgram Enrollment` pe
         JOIN `tabStudent` s ON pe.student = s.name
         WHERE pe.program IN ({placeholders})
-          AND pe.docstatus = 1
-          AND (s.student_email_id IS NULL OR s.student_email_id = '')
+          AND pe.docstatus < 2
+          AND (s.student_email_id IS NULL OR s.student_email_id NOT LIKE 'stu_%%@school.local')
     """, tuple(standards), as_dict=True)
 
     generated = 0
     from frappe.model.naming import make_autoname
     for student in students:
-        first = (student.first_name or student.student_name or "stu").lower().strip().replace(" ", "")
-        last = (student.last_name or "").lower().strip().replace(" ", "")
-        base_name = f"{first}_{last}" if last else first
-        
-        # Start at 0100
-        raw_seq = make_autoname("STU-.####").split("-")[1]
-        seq = f"{int(raw_seq) + 99:04d}"
-        
-        username = f"{base_name}_{seq}"
-        email = f"stu_{username}@school.local"
-        
-        name_prefix = (student.first_name or student.student_name or "Stu")[:3].capitalize()
-        sys_pwd = f"{name_prefix}{student.name}${generate_random_digits(2)}"
-        
-        user = create_user(
-            email=email,
-            username=username,
-            first_name=student.student_name,
-            role="Student",
-            sys_pwd=sys_pwd
-        )
-        
-        frappe.db.set_value("Student", student.name, "student_email_id", email)
-        
-        from frappe.permissions import add_user_permission
-        add_user_permission("Student", student.name, email)
-        
-        generated += 1
+        try:
+            first = (student.first_name or student.student_name or "stu").lower().strip().replace(" ", "")
+            last = (student.last_name or "").lower().strip().replace(" ", "")
+            base_name = f"{first}_{last}" if last else first
+            
+            # Start at 0100
+            raw_seq = make_autoname("STU-.####").split("-")[1]
+            seq = f"{int(raw_seq) + 99:04d}"
+            
+            username = f"{base_name}_{seq}"
+            email = f"stu_{username}@school.local"
+            
+            name_prefix = (student.first_name or student.student_name or "Stu")[:3].capitalize()
+            sys_pwd = f"{name_prefix}{student.name}${generate_random_digits(2)}"
+            
+            user = create_user(
+                email=email,
+                username=username,
+                first_name=student.student_name,
+                role="Student",
+                sys_pwd=sys_pwd
+            )
+            
+            frappe.db.set_value("Student", student.name, "student_email_id", email)
+            frappe.db.set_value("Student", student.name, "user", email)
+            
+            from frappe.permissions import add_user_permission
+            add_user_permission("Student", student.name, email)
+            
+            generated += 1
+        except Exception as e:
+            frappe.log_error(title=f"Failed to generate account for student {student.name}", message=frappe.get_traceback())
+            continue
         
     return {"status": "success", "generated": generated}
 
@@ -132,39 +141,43 @@ def generate_guardian_accounts():
     generated = 0
     from frappe.model.naming import make_autoname
     for guard in guardians:
-        # Guardian doctype may not have first_name/last_name separated, so we split guardian_name
-        parts = (guard.guardian_name or "guardian").split()
-        first = parts[0].lower().strip()
-        last = parts[-1].lower().strip() if len(parts) > 1 else ""
-        base_name = f"{first}_{last}" if last else first
-        
-        seq = make_autoname("GRD-.####").split("-")[1]
-        username = f"{base_name}_{seq}"
-        email = f"grd_{username}@school.local"
-        
-        sys_pwd = f"Guard{guard.name}#{generate_random_digits(2)}"
-        
-        # Check if user already exists
-        if frappe.db.exists("User", email):
+        try:
+            # Guardian doctype may not have first_name/last_name separated, so we split guardian_name
+            parts = (guard.guardian_name or "guardian").split()
+            first = parts[0].lower().strip()
+            last = parts[-1].lower().strip() if len(parts) > 1 else ""
+            base_name = f"{first}_{last}" if last else first
+            
+            seq = make_autoname("GRD-.####").split("-")[1]
+            username = f"{base_name}_{seq}"
+            email = f"grd_{username}@school.local"
+            
+            sys_pwd = f"Guard{guard.name}#{generate_random_digits(2)}"
+            
+            # Check if user already exists
+            if frappe.db.exists("User", email):
+                frappe.db.set_value("Guardian", guard.name, "user", email)
+                from frappe.permissions import add_user_permission
+                add_user_permission("Guardian", guard.name, email)
+                continue
+                
+            user = create_user(
+                email=email,
+                username=username,
+                first_name=guard.guardian_name,
+                role="Guardian",
+                sys_pwd=sys_pwd
+            )
+            
             frappe.db.set_value("Guardian", guard.name, "user", email)
+            
             from frappe.permissions import add_user_permission
             add_user_permission("Guardian", guard.name, email)
-            continue
             
-        user = create_user(
-            email=email,
-            username=username,
-            first_name=guard.guardian_name,
-            role="Guardian",
-            sys_pwd=sys_pwd
-        )
-        
-        frappe.db.set_value("Guardian", guard.name, "user", email)
-        
-        from frappe.permissions import add_user_permission
-        add_user_permission("Guardian", guard.name, email)
-        
-        generated += 1
+            generated += 1
+        except Exception as e:
+            frappe.log_error(title=f"Failed to generate account for guardian {guard.name}", message=frappe.get_traceback())
+            continue
         
     return {"status": "success", "generated": generated}
 
